@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Administration — Rona shop</title>
+<title>Administration — Liyan</title>
 <style>
   :root {
     --black: #0d0b08; --coal: #161310; --coal2: #1e1a15;
@@ -104,14 +104,14 @@
 
   <!-- ============ CONNEXION ============ -->
   <div class="card login-card" id="loginView">
-    <div class="mono">R</div>
+    <div class="mono">ل</div>
     <h1>Administration</h1>
-    <p class="sub">Gérez votre boutique Rona shop</p>
+    <p class="sub">Gérez votre boutique Liyan</p>
     <div class="notice" id="setupNotice" style="display:none;">
       <b class="t">Base de données non configurée</b>
       Pour activer ce panneau, suivez ces étapes :
       <ol>
-        <li>Créez un projet gratuit sur <b>console.firebase.google.com</b> (projet dédié à Rona shop).</li>
+        <li>Créez un projet gratuit sur <b>console.firebase.google.com</b> (projet dédié à Liyan).</li>
         <li>Activez <b>Realtime Database</b>, puis <b>Authentication → E-mail/Mot de passe</b>, et créez un utilisateur admin.</li>
         <li>Dans Realtime Database → <b>Règles</b>, collez :<br>
           <code>{ "rules": { ".read": true, ".write": "auth != null" } }</code></li>
@@ -193,7 +193,7 @@ const CATS = { musk: 'Musc', oud: 'Oud', sets: 'Coffrets', bakhoor: 'Bakhoor' };
 const CITIES = ['Casablanca','Rabat','Marrakech','Agadir','Tanger','Fès','Meknès','Oujda','Autre ville'];
 
 const DEFAULT_SETTINGS = {
-  storeName: "Rona shop",
+  storeName: "Liyan",
   whatsapp: '212689338429',
   announce: {
     ar: "🚚 التوصيل <b>مجاني</b> للطلبات فوق 500 درهم · 💵 الدفع عند الاستلام",
@@ -201,7 +201,7 @@ const DEFAULT_SETTINGS = {
     en: "🚚 <b>FREE</b> delivery on orders over 500 DH · 💵 Cash on delivery"
   },
   freeShip: 500,
-  promo: 'RONA10',
+  promo: 'LIYAN10',
   pct: 10,
   fees: { 'Casablanca': 25, 'Rabat': 35, 'Marrakech': 45, 'Agadir': 50,
           'Tanger': 50, 'Fès': 40, 'Meknès': 40, 'Oujda': 55, 'Autre ville': 60 }
@@ -455,7 +455,7 @@ async function saveAll(){
     document.querySelectorAll('#feeGrid input').forEach(inp => { fees[inp.dataset.city] = Math.max(0, +inp.value || 0); });
   } catch(e) { toast('⚠️ Lecture des frais de livraison : ' + (e.message || e)); return; }
   const settings = {
-    storeName: $('setName').value.trim() || 'Rona shop',
+    storeName: $('setName').value.trim() || 'Liyan',
     whatsapp: $('setWa').value.replace(/\D/g, ''),
     announce: { ar: $('setAnn_ar').value, fr: $('setAnn_fr').value, en: $('setAnn_en').value },
     freeShip: Math.max(0, +$('setFree').value || 0),
