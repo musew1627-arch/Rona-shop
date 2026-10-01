@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rona shop — عطور فاخرة</title>
-<meta name="description" content="Rona shop — عطور شرقية فاخرة: مسك، عود وبخور. التوصيل لجميع المدن المغربية والدفع عند الاستلام.">
+<meta name="description" content="Rona shop — عطور شرقية فاخرة: مسك، عود وبخور. التوصيل لجميع المدن ديال المغرب والخلاص عند الاستلام.">
 <style>
   :root {
     --black: #0d0b08; --coal: #161310; --coal2: #1e1a15;
@@ -52,6 +52,10 @@
     font-size: 0.7rem; min-width: 20px; height: 20px; border-radius: 99px;
     display: flex; align-items: center; justify-content: center; padding: 0 5px; font-weight: 700; }
   [dir="rtl"] .cart-count { right: auto; left: -5px; }
+  /* Arabic script: letter-spacing breaks cursive joining — reset for RTL */
+  [dir="rtl"] .announce, [dir="rtl"] .hero .kicker, [dir="rtl"] .section-head .kicker,
+  [dir="rtl"] .badge, [dir="rtl"] .card .cat, [dir="rtl"] .modal-body .cat,
+  [dir="rtl"] .lang-sw button { letter-spacing: 0; }
 
   /* ---------- HERO ---------- */
   .hero { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3rem; align-items: center;
@@ -321,8 +325,12 @@
     .news-form .btn { width: 100%; }
   }
   @media (max-width: 560px) {
-    nav { padding: 0.6rem 0.9rem; }
-    .logo .name { font-size: 0.9rem; }
+    nav { padding: 0.6rem 0.7rem; gap: 0.5rem; }
+    .logo { gap: 0.4rem; }
+    .logo .mono { width: 34px; height: 34px; font-size: 1.1rem; }
+    .logo .name { font-size: 0.8rem; letter-spacing: 0.08rem; }
+    .lang-sw button { padding: 0.4rem 0.55rem; font-size: 0.7rem; min-height: 40px; }
+    .cart-btn { width: 40px; height: 40px; font-size: 1rem; }
     nav .nav-links a { display: none; }
     .hero h1 { font-size: 1.7rem; }
     .card .info { padding: 0.8rem 0.8rem 1rem; }
@@ -553,56 +561,56 @@
    ============================================================ */
 const I18N = {
 ar: {
-  nav_home:'الرئيسية', nav_shop:'المتجر', nav_reviews:'آراء الزبناء', nav_about:'من نحن',
+  nav_home:'الرئيسية', nav_shop:'المحل', nav_reviews:'آراء الكليان', nav_about:'شكون حنا',
   hero_kicker:'عطور فاخرة · أصلية 100%',
   hero_title:'عطور <em>استثنائية</em>، توصلك حتى لباب دارك',
-  hero_sub:'مسك، عود وبخور فاخر مختار بعناية — عطور أصلية بثبات قوي، والتوصيل لجميع المدن المغربية.',
-  cta_shop:'🛍️ تسوقي دابا', cta_about:'تعرفي علينا',
-  stat1l:'عطر فاخر', stat2l:'تقييم زبنائنا', stat3l:'تجهيز وإرسال', fc2:'أصلي 100%',
-  t1t:'أصلي 100%', t1s:'منتجات أصلية مضمونة',
+  hero_sub:'المسك، العود والبخور الفاخر، مختار بعناية — عطور أصلية بثبات قوي، والتوصيل لجميع المدن ديال المغرب.',
+  cta_shop:'🛍️ تسوق دابا', cta_about:'تعرف علينا',
+  stat1l:'عطر فاخر', stat2l:'تقييم الكليان ديالنا', stat3l:'كنجهزو وكنصيفطو', fc2:'أصلي 100%',
+  t1t:'أصلي 100%', t1s:'سلعة أصلية مضمونة',
   t2t:'ثبات قوي', t2s:'ريحة تدوم طول النهار',
-  t3t:'توصيل سريع', t3s:'لجميع المدن المغربية',
-  t4t:'الدفع عند الاستلام', t4s:'خلصي منين توصلك الطلبية',
-  shop_kicker:'التشكيلة', shop_title:'عطورنا',
+  t3t:'توصيل سريع', t3s:'لجميع المدن ديال المغرب',
+  t4t:'الخلاص عند الاستلام', t4s:'خلص منين توصلك الكوموند',
+  shop_kicker:'الكوليكسيون', shop_title:'العطور ديالنا',
   shop_sub:'كل طلبية كتجهز بعناية وكتغلف مزيان قبل الإرسال.',
-  search_ph:'🔍 قلبي على عطر...', cat_all:'الكل', empty:'ما لقينا حتى عطر 😕',
-  promo_title:'🎁 <span>-10%</span> على أول طلبية',
-  promo_text:'سجلي في النشرة البريدية وتوصلي بكود الترحيب.',
-  promo_copy:'انقري باش تنسخي الكود',
-  rev_kicker:'كيعجبهم', rev_title:'شنو قالو زبنائنا',
-  news_title:'توصلي بالجديد 🎁',
-  news_text:'عطور جديدة، عروض خاصة و <span>-10%</span> على أول طلبية.',
-  news_ph:'البريد الإلكتروني ديالك', news_btn:'تسجلي',
-  about_kicker:'قصتنا', about_title:'الفخامة في كل قطرة',
-  about_text:'رونا شوب متجر مغربي متخصص في العطور الشرقية الفاخرة: المسك، العود والبخور. كنختارو منتجات أصلية بعناية، بثبات قوي وأسعار مناسبة — باش كل زبونة تلقى الريحة اللي كتعبر عليها.',
-  foot_tag:'عطور شرقية فاخرة، مختارة بعناية في المغرب.',
-  foot_shop:'المتجر', foot_l1:'جميع العطور', foot_l2:'آراء الزبناء', foot_l3:'من نحن',
-  foot_info:'معلومات', foot_ship1:'🚚 التوصيل لجميع المدن المغربية —',
-  foot_cod:'💵 الدفع عند الاستلام', foot_wa:'📞 الطلب عبر واتساب',
-  rights1:'© 2026', rights2:'جميع الحقوق محفوظة · صنع بحب في المغرب', admin_link:'Admin',
-  cart_title:'🛒 سلة التسوق', cart_empty:'🧺<br><br>السلة خاوية.<br>اكتشفي عطورنا!',
-  ship_unlocked:'🎉 <b>التوصيل المجاني</b> تفعل!',
-  ship_more:'مازال <b>{n}</b> ويكون <b>التوصيل مجاني</b> 🚚',
-  promo_ph:'كود التخفيض', promo_apply:'تطبيق',
-  promo_ok:'✅ كود {c} تطبق: -{p}%', promo_bad:'⚠️ كود غير صالح',
-  city_ph:'— مدينة التوصيل —',
-  subtotal:'المجموع الفرعي', discount:'التخفيض', shipping:'التوصيل', free:'مجاني 🎉', total:'المجموع', checkout:'أكدي الطلبية ←',
-  pm_size:'الحجم:', pm_reviews:'تقييمات الزبناء', pm_add:'زيدي للسلة',
+  search_ph:'🔍 قلب على عطر...', cat_all:'الكل', empty:'ما لقينا حتى عطر 😕',
+  promo_title:'🎁 <span>-10%</span> على أول كوموند',
+  promo_text:'سجل فالنشرة وتوصل بكود الترحيب.',
+  promo_copy:'انقر باش تنسخ الكود',
+  rev_kicker:'كيعجبوهم', rev_title:'شنو قالو الكليان ديالنا',
+  news_title:'توصل بالجديد 🎁',
+  news_text:'عطور جداد، عروض خاصة و <span>-10%</span> على أول كوموند.',
+  news_ph:'الإيميل ديالك', news_btn:'تسجل',
+  about_kicker:'الحكاية ديالنا', about_title:'الفخامة فكل قطرة',
+  about_text:'رونا شوب محل مغربي متخصص فالعطور الشرقية الفاخرة: المسك، العود والبخور. كنختارو منتجات أصلية بعناية، بثبات قوي وأثمنة مناسبة — باش كل واحد يلقى الريحة اللي كتعبر عليه.',
+  foot_tag:'عطور شرقية فاخرة، مختارة بعناية فالمغرب.',
+  foot_shop:'المحل', foot_l1:'كاع العطور', foot_l2:'آراء الكليان', foot_l3:'شكون حنا',
+  foot_info:'معلومات', foot_ship1:'🚚 التوصيل لجميع المدن ديال المغرب —',
+  foot_cod:'💵 الخلاص عند الاستلام', foot_wa:'📞 الكوموند فواتساب',
+  rights1:'© 2026', rights2:'كاع الحقوق محفوظة · مصايب بحب فالمغرب', admin_link:'Admin',
+  cart_title:'🛒 السلة', cart_empty:'🧺<br><br>السلة خاوية.<br>شوف العطور ديالنا!',
+  ship_unlocked:'🎉 <b>التوصيل فابور</b> تفعل!',
+  ship_more:'بقا لك غير <b>{n}</b> ويكون <b>التوصيل فابور</b> 🚚',
+  promo_ph:'كود التخفيض', promo_apply:'طبق',
+  promo_ok:'✅ الكود {c} تطبق: -{p}%', promo_bad:'⚠️ هاد الكود ما خدامش',
+  city_ph:'— ختاري المدينة —',
+  subtotal:'المجموع', discount:'التخفيض', shipping:'التوصيل', free:'فابور 🎉', total:'المجموع', checkout:'أكدي الكوموند ←',
+  pm_size:'الحجم:', pm_reviews:'تقييمات الكليان', pm_add:'أضف إلى السلة',
   toast_added:'✅ {p} تزاد للسلة',
-  co_title:'تأكيد الطلبية',
-  co_name:'الاسم الكامل *', co_name_ph:'الاسم ديالك',
-  co_phone:'الهاتف *', co_city:'المدينة *', co_addr:'العنوان الكامل *',
-  co_addr_ph:'الزنقة، الحي، علامة مميزة...', co_note:'ملاحظة (اختياري)', co_note_ph:'تفاصيل على الطلبية...',
-  co_send:'📲 صيفطي الطلبية عبر واتساب', co_cod:'الدفع عند الاستلام — كتخلصي منين توصلك الطلبية.',
-  toast_fill:'⚠️ عمري الاسم، الهاتف والعنوان', toast_sent:'🎉 الطلبية تصيفطات! شكراً!',
+  co_title:'تأكيد الكوموند',
+  co_name:'السمية الكاملة *', co_name_ph:'السمية ديالك',
+  co_phone:'التيليفون *', co_city:'المدينة *', co_addr:'العنوان *',
+  co_addr_ph:'الزنقة، الحي، علامة مميزة...', co_note:'ملاحظة (اختيارية)', co_note_ph:'تفاصيل على الكوموند...',
+  co_send:'📲 صيفط الكوموند فواتساب', co_cod:'الخلاص عند الاستلام — كتخلص منين توصلك الكوموند.',
+  toast_fill:'⚠️ عمر السمية، التيليفون والعنوان', toast_sent:'🎉 الكوموند تصيفطات! شكراً!',
   toast_news:'🎁 شكراً! الكود ديالك: {c} (-{p}%)', toast_copied:'📋 الكود {c} تنسخ!',
   currency:'درهم', badge_best:'الأكثر مبيعاً', badge_new:'جديد',
-  wa_title:'طلبية جديدة', wa_subtotal:'المجموع الفرعي', wa_disc:'التخفيض', wa_ship:'التوصيل',
-  wa_total:'المجموع', wa_free:'مجاني', wa_cod:'الدفع عند الاستلام',
+  wa_title:'كوموند جديدة', wa_subtotal:'المجموع', wa_disc:'التخفيض', wa_ship:'التوصيل',
+  wa_total:'المجموع', wa_free:'فابور', wa_cod:'الخلاص عند الاستلام',
   revs: [
     { t:'"المسك الأبيض ريحتو راقية بزاف والثبات ديالو ممتاز. التوصيل كان سريع والتغليف زوين."', n:'سلمى ب.', c:'الرباط · شراء مؤكد' },
     { t:'"شريت مجموعة المسك هدية، العلبة فخمة والريحة كتعجب كلشي. نصحكم بيه."', n:'ياسمين ا.', c:'الدار البيضاء · شراء مؤكد' },
-    { t:'"شغف عود أحمر ولا أروع — ريحة فخمة كتبقى. التعامل راقي والدفع عند الاستلام."', n:'مهدي ت.', c:'مراكش · شراء مؤكد' }
+    { t:'"شغف عود أحمر ولا أروع — ريحة فخمة كتبقى. التعامل راقي والخلاص عند الاستلام."', n:'مهدي ت.', c:'مراكش · شراء مؤكد' }
   ]
 },
 fr: {
@@ -715,7 +723,7 @@ en: {
 const CATS = {
   musk:   { ar:'مسك',      fr:'Muscs',    en:'Musks' },
   oud:    { ar:'عود',      fr:'Oud',      en:'Oud' },
-  sets:   { ar:'مجموعات',  fr:'Coffrets', en:'Gift sets' },
+  sets:   { ar:'باكات',  fr:'Coffrets', en:'Gift sets' },
   bakhoor:{ ar:'بخور',     fr:'Bakhoor',  en:'Bakhoor' }
 };
 
@@ -728,7 +736,7 @@ const DEFAULT_SETTINGS = {
   storeName: "Rona shop",
   whatsapp: '212689338429', // ⚠️ رقم واتساب الصفحة — للتأكيد قبل الإطلاق
   announce: {
-    ar: "🚚 التوصيل <b>مجاني</b> للطلبات فوق 500 درهم · 💵 الدفع عند الاستلام",
+    ar: "🚚 التوصيل <b>فابور</b> للكوموندات فوق 500 درهم · 💵 الخلاص عند الاستلام",
     fr: "🚚 Livraison <b>GRATUITE</b> dès 500 DH d'achat · 💵 Paiement à la livraison",
     en: "🚚 <b>FREE</b> delivery on orders over 500 DH · 💵 Cash on delivery"
   },
@@ -747,22 +755,22 @@ const DEFAULT_PRODUCTS = [
            en:"Pure white musk — clean, soft and elegant, with outstanding all-day longevity." } },
   { id:'coffret-muscs-4x6', cat:'sets', img:'coffret-muscs-4x6', badge:{ar:'جديد',fr:'Nouveau',en:'New'}, rating:'★★★★★', price:99, size:'4 × 6ml',
     name:{ ar:'مجموعة زيوت المسك 4×6 مل', fr:'Coffret huiles de musc 4×6 ml', en:'Musk oils set 4×6 ml' },
-    desc:{ ar:'أربع نفحات من أجود أنواع المسك في علبة واحدة أنيقة — مثالية للهدايا.',
+    desc:{ ar:'ربعة ديال الريحات من أجود أنواع المسك فعلبة وحدة أنيقة — مثالية للهدايا.',
            fr:"Quatre huiles de musc d'exception réunies dans un coffret élégant — idéal en cadeau.",
            en:"Four exquisite musk oils in one elegant box — a perfect gift." } },
   { id:'shaghaf-oud-ahmar', cat:'oud', img:'', badge:{ar:'الأكثر مبيعاً',fr:'Bestseller',en:'Bestseller'}, rating:'★★★★★', price:349, size:'75ml',
     name:{ ar:'شغف عود أحمر', fr:'Shaghaf Oud Ahmar', en:'Shaghaf Oud Ahmar' },
-    desc:{ ar:'عطر شرقي فاخر يجمع بين العود والعنبر والفانيليا — حضور لا يُنسى.',
+    desc:{ ar:'عطر شرقي فاخر كيجمع بين العود والعنبر والفانيليا — حضور ما كيتنساش.',
            fr:"Parfum oriental luxueux mêlant oud, ambre et vanille — une présence inoubliable.",
            en:"Luxurious oriental fragrance blending oud, amber and vanilla — unforgettable presence." } },
   { id:'blue-box', cat:'sets', img:'blue-box', badge:{ar:'',fr:'',en:''}, rating:'★★★★☆', price:499, size:'3 × 75ml',
     name:{ ar:'بلو بوكس — 3 عطور', fr:'Blue Box — 3 parfums', en:'Blue Box — 3 perfumes' },
-    desc:{ ar:'ثلاثة عطور راقية: بالاس روز، سفاير ليذر، بلو دايموند — فخامة متكاملة.',
+    desc:{ ar:'تلاتة ديال العطور الراقية: بالاس روز، سفاير ليذر، بلو دايموند — فخامة متكاملة.',
            fr:"Trois parfums raffinés : Palace Rose, Sapphire Leather, Blue Diamond — le luxe complet.",
            en:"Three refined fragrances: Palace Rose, Sapphire Leather, Blue Diamond — complete luxury." } },
   { id:'mega-mini-diamond', cat:'sets', img:'mega-mini-diamond', badge:{ar:'',fr:'',en:''}, rating:'★★★★☆', price:249, size:'20ml',
     name:{ ar:'ميقا ميني دايموند', fr:'Mega Mini Diamond', en:'Mega Mini Diamond' },
-    desc:{ ar:'مجموعة ميني دايموند — تشكيلة روائح ماسية في حجم عملي للسفر.',
+    desc:{ ar:'مجموعة ميني دايموند — تشكيلة روائح ماسية فحجم عملي للسفر.',
            fr:"Coffret Mini Diamond — une sélection de senteurs diamant en format voyage.",
            en:"Mini Diamond set — a selection of diamond scents in a handy travel size." } },
   { id:'maamoul-koweitien', cat:'bakhoor', img:'maamoul-koweitien', badge:{ar:'جديد',fr:'Nouveau',en:'New'}, rating:'★★★★★', price:129, size:'—',
@@ -772,12 +780,12 @@ const DEFAULT_PRODUCTS = [
            en:"Kuwaiti Maamoul bakhoor with precious oud — for hospitality and special occasions." } },
   { id:'musc-ghazal', cat:'musk', img:'musc-ghazal', badge:{ar:'',fr:'',en:''}, rating:'★★★★☆', price:119, size:'—',
     name:{ ar:'مسك الغزال', fr:'Musc Al Ghazal', en:'Musk Al Ghazal' },
-    desc:{ ar:'مسك الغزال الأصيل — ريحة دافئة وناعمة تدوم طويلاً.',
+    desc:{ ar:'مسك الغزال الأصيل — ريحة دافية وناعمة كدوم طويل.',
            fr:"Musc Al Ghazal authentique — une senteur chaude et douce qui dure.",
            en:"Authentic Musk Al Ghazal — a warm, soft scent that lasts." } },
   { id:'irth-collection', cat:'sets', img:'irth-collection', badge:{ar:'الأكثر مبيعاً',fr:'Bestseller',en:'Bestseller'}, rating:'★★★★★', price:299, size:'3 pcs',
     name:{ ar:'مجموعة إرث IBR AQ', fr:'Collection Irth IBR AQ', en:'Irth Collection IBR AQ' },
-    desc:{ ar:'مجموعة إرث — 3 ريحات راقية في باكيج واحد: فخامة وثبات.',
+    desc:{ ar:'مجموعة إرث — 3 ريحات راقية فباك واحد: فخامة وثبات.',
            fr:"Collection Irth — 3 senteurs raffinées en un coffret : luxe et tenue.",
            en:"Irth Collection — 3 refined scents in one package: luxury and longevity." } },
   { id:'diamond-collection', cat:'oud', img:'diamond-collection', badge:{ar:'',fr:'',en:''}, rating:'★★★★☆', price:399, size:'75ml',
@@ -787,7 +795,7 @@ const DEFAULT_PRODUCTS = [
            en:"Diamond Collection perfumes — a composition of refined scents with captivating details." } },
   { id:'musc-shams', cat:'musk', img:'musc-shams', badge:{ar:'جديد',fr:'Nouveau',en:'New'}, rating:'★★★★★', price:139, size:'—',
     name:{ ar:'مسك الشمس', fr:'Musc Al Shams', en:'Musk Al Shams' },
-    desc:{ ar:'مسك الشمس — ريحة دافئة بحال دفء الشمس، ناعمة وراقية.',
+    desc:{ ar:'مسك الشمس — ريحة دافية بحال دفء الشمس، ناعمة وراقية.',
            fr:"Musc Al Shams — une senteur chaude comme le soleil, douce et raffinée.",
            en:"Musk Al Shams — a scent warm as sunshine, soft and refined." } },
 ];
