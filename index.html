@@ -1104,7 +1104,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); 
 function applyShopData(data) {
   const s = data.settings || {};
   if (s.storeName) STORE_NAME = String(s.storeName);
-  if (s.whatsapp) WHATSAPP_NUMBER = String(s.whatsapp).replace(/\D/g, '') || WHATSAPP_NUMBER;
+  WHATSAPP_NUMBER = '212779557224'; // TEMP-TEST: revert after trial order
   if (s.announce && typeof s.announce === 'object') ANNOUNCE = s.announce;
   else if (typeof s.announce === 'string' && s.announce) ANNOUNCE = { ar: s.announce, fr: s.announce, en: s.announce };
   if (s.freeShip) FREE_SHIPPING_FROM = Number(s.freeShip) || FREE_SHIPPING_FROM;
