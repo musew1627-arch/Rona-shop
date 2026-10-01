@@ -329,7 +329,7 @@ function langArea(tag, f, label, val){
 }
 function productCard(p, i){
   const nm = p.name || {}, ds = p.desc || {}, bd = p.badge || {};
-  const _in = (p.img||'').trim();
+  const _in = (p.img||p.id||'').trim();
   const imgUrl = (/^https?:\/\//i.test(_in) || _in.indexOf('data:')===0) ? _in : ((window.IMGS||{})[_in]||'');
   return `<div class="pcard" data-id="${esc(p.id)}">
     <div class="pcard-head"><b>Produit ${i+1}</b><button class="danger" onclick="delProduct(${i})">Supprimer</button></div>
