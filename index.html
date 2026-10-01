@@ -124,6 +124,7 @@
   .card { background: var(--coal); border-radius: 18px; overflow: hidden; cursor: pointer;
     box-shadow: 0 4px 18px rgba(0,0,0,0.5); transition: transform 0.25s, box-shadow 0.25s;
     border: 1px solid rgba(201,162,39,0.22); position: relative;
+    display: flex; flex-direction: column;
     opacity: 0; transform: translateY(18px); animation: fadeUp 0.5s forwards; }
   @keyframes fadeUp { to { opacity: 1; transform: none; } }
   .card:hover { transform: translateY(-5px); box-shadow: 0 16px 34px rgba(201,162,39,0.18); }
@@ -136,16 +137,16 @@
   .badge.best { background: linear-gradient(135deg, var(--gold-l), var(--gold-d)); color: #0d0b08;
     box-shadow: 0 4px 12px rgba(201,162,39,0.4); }
   .badge.new { background: var(--green); color: #fff; }
-  .card .info { padding: 1rem 1.1rem 1.2rem; }
+  .card .info { padding: 1rem 1.1rem 1.2rem; flex: 1; display: flex; flex-direction: column; }
   .card .cat { font-size: 0.7rem; color: var(--gold-l); text-transform: uppercase;
     letter-spacing: 0.08rem; font-weight: 700; }
-  .card h3 { font-size: 1.02rem; margin: 0.3rem 0 0.25rem; color: var(--cream); }
+  .card h3 { font-size: 1.02rem; margin: 0.3rem 0 0.25rem; color: var(--cream); min-height: 2.8em; }
   .card .stars { color: var(--gold-l); font-size: 0.8rem; margin-bottom: 0.4rem; }
   .card .price { color: var(--gold-l); font-weight: 700; margin-bottom: 0.8rem; }
   .card .price small { color: var(--muted); font-weight: 400; }
   .add-btn { width: 100%; background: linear-gradient(135deg, var(--gold-l), var(--gold-d)); color: #0d0b08;
     border: none; padding: 0.7rem; border-radius: 12px; font-size: 0.92rem; font-weight: 700;
-    cursor: pointer; transition: filter 0.2s; }
+    cursor: pointer; transition: filter 0.2s; margin-top: auto; }
   .add-btn:hover { filter: brightness(1.1); }
   .empty { text-align: center; color: var(--muted); padding: 3rem 0; display: none; font-size: 1.05rem; }
 
