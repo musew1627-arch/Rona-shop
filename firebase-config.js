@@ -23,10 +23,10 @@
    catalogue intégré — rien ne change pour vos clients.
    ============================================================ */
 window.FIREBASE_CONFIG = {
-  apiKey: "PASTE_HERE",
-  authDomain: "PASTE_HERE",
-  databaseURL: "PASTE_HERE",
-  projectId: "PASTE_HERE",
-  appId: "PASTE_HERE"
+  apiKey: "AIzaSyCSC-sQh0nE0JTQopASSMdd572a8rFOjHs",
+  authDomain: "rona-shop-5eff7.firebaseapp.com",
+  databaseURL: "https://rona-shop-5eff7-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "rona-shop-5eff7",
+  appId: "1:566555319953:web:e4ff86c50a90ffe08f2930"
 };
-window.FIREBASE_ENABLED = false; // ← passez à true après avoir collé la vraie configuration
+window.FIREBASE_ENABLED = true;
