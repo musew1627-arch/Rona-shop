@@ -850,7 +850,7 @@ function phImg(label) {
   return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
 }
 function imgFor(p) {
-  const n = (p.img || '').trim();
+  const n = (p.img || p.id || '').trim();
   if (/^https?:\/\//i.test(n) || n.indexOf('data:') === 0) return n;
   const hit = (window.IMGS || {})[n];
   if (hit) return hit;
