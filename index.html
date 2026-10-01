@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rona shop — عطور فاخرة</title>
+<meta name="description" content="Rona shop — عطور شرقية فاخرة: مسك، عود وبخور. التوصيل لجميع المدن المغربية والدفع عند الاستلام.">
+<style>
+  :root {
+    --black: #0d0b08; --coal: #161310; --coal2: #1e1a15;
+    --gold: #c9a227; --gold-l: #e8c766; --gold-d: #9a7b1c;
+    --cream: #f7f1e3; --ivory: #efe6d0; --muted: #a89a7d;
+    --white: #fff; --green: #1F9D55; --red: #c0392b;
+    --wa: #25D366;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Segoe UI', Tahoma, system-ui, sans-serif; background: var(--black); color: var(--cream); }
+  h1, h2, h3, .serif { font-family: Georgia, 'Times New Roman', serif; }
+  img { display: block; }
+
+  /* ---------- ANNOUNCEMENT ---------- */
+  .announce { background: linear-gradient(90deg, #0d0b08, #2a2214, #0d0b08); color: var(--gold-l);
+    text-align: center; font-size: 0.82rem; padding: 0.55rem 1rem; letter-spacing: 0.04rem; font-weight: 600;
+    border-bottom: 1px solid rgba(201,162,39,0.25); }
+
+  /* ---------- NAV ---------- */
+  nav { position: sticky; top: 0; z-index: 50; background: rgba(13,11,8,0.96);
+    backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201,162,39,0.25);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.7rem 1.4rem; gap: 0.8rem; }
+  .logo { display: flex; align-items: center; gap: 0.6rem; white-space: nowrap; }
+  .logo .mono { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: Georgia, serif; font-size: 1.3rem; color: var(--gold-l);
+    background: radial-gradient(circle at 35% 30%, #2a2214, #0d0b08); }
+  .logo .name { font-family: Georgia, serif; font-size: 1.15rem; letter-spacing: 0.14rem;
+    color: var(--cream); font-weight: 700; }
+  .logo .name span { color: var(--gold); }
+  .nav-links { display: flex; gap: 1.2rem; align-items: center; }
+  .nav-links a { color: var(--ivory); text-decoration: none; font-size: 0.92rem; font-weight: 500; }
+  .nav-links a:hover { color: var(--gold-l); }
+  .lang-sw { display: flex; border: 1px solid rgba(201,162,39,0.4); border-radius: 99px; overflow: hidden; }
+  .lang-sw button { background: transparent; border: none; color: var(--muted); font-size: 0.75rem;
+    font-weight: 700; padding: 0.42rem 0.7rem; cursor: pointer; letter-spacing: 0.03rem; }
+  .lang-sw button.active { background: var(--gold); color: #0d0b08; }
+  .cart-btn { position: relative; background: linear-gradient(135deg, var(--gold-l), var(--gold-d));
+    border: none; color: #0d0b08; font-size: 1.1rem; width: 44px; height: 44px;
+    border-radius: 50%; cursor: pointer; transition: transform 0.2s; }
+  .cart-btn:hover { transform: scale(1.06); }
+  .cart-count { position: absolute; top: -5px; right: -5px; background: var(--red); color: #fff;
+    font-size: 0.7rem; min-width: 20px; height: 20px; border-radius: 99px;
+    display: flex; align-items: center; justify-content: center; padding: 0 5px; font-weight: 700; }
+  [dir="rtl"] .cart-count { right: auto; left: -5px; }
+
+  /* ---------- HERO ---------- */
+  .hero { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3rem; align-items: center;
+    max-width: 1200px; margin: 0 auto; padding: 4rem 1.6rem 3.5rem;
+    background: radial-gradient(ellipse 60% 55% at 25% 30%, rgba(201,162,39,0.12) 0%, transparent 70%); }
+  .hero .kicker { color: var(--gold-l); letter-spacing: 0.22rem; text-transform: uppercase;
+    font-size: 0.78rem; font-weight: 700; margin-bottom: 1rem; }
+  .hero h1 { font-size: 3rem; line-height: 1.25; margin-bottom: 1.1rem; color: var(--cream); }
+  .hero h1 em { color: var(--gold-l); font-style: italic; }
+  .hero p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.8rem; max-width: 480px; }
+  .hero-cta { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .btn { display: inline-block; background: var(--gold); color: #0d0b08; border: none;
+    padding: 0.95rem 2.2rem; border-radius: 99px; font-weight: 700; font-size: 1rem;
+    cursor: pointer; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(201,162,39,0.35); }
+  .btn-gold { background: linear-gradient(135deg, var(--gold-l), var(--gold-d)); color: #0d0b08;
+    box-shadow: 0 8px 22px rgba(201,162,39,0.3); }
+  .btn-outline { background: transparent; color: var(--cream); border: 2px solid rgba(201,162,39,0.5); }
+  .btn-outline:hover { border-color: var(--gold-l); }
+  .hero-stats { display: flex; gap: 2rem; }
+  .hero-stats div b { font-size: 1.4rem; display: block; color: var(--gold-l); }
+  .hero-stats div span { font-size: 0.82rem; color: var(--muted); }
+  .hero-visual { position: relative; }
+  .hero-art { width: 100%; border-radius: 24px; aspect-ratio: 1/1; object-fit: cover;
+    border: 1px solid rgba(201,162,39,0.35); box-shadow: 0 30px 60px rgba(0,0,0,0.6); }
+  .float-card { position: absolute; background: var(--coal2); border: 1px solid rgba(201,162,39,0.35);
+    border-radius: 14px; padding: 0.7rem 1rem; color: var(--cream);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5); font-size: 0.85rem; font-weight: 600;
+    display: flex; align-items: center; gap: 0.5rem; animation: float 3.5s ease-in-out infinite; }
+  .float-card .stars { color: var(--gold-l); }
+  .fc1 { top: 1.2rem; left: -1rem; }
+  .fc2 { bottom: 1.4rem; right: -0.6rem; animation-delay: 1.7s; }
+  [dir="rtl"] .fc1 { left: auto; right: -1rem; }
+  [dir="rtl"] .fc2 { right: auto; left: -0.6rem; }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+  /* ---------- TRUST ---------- */
+  .trust { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+    max-width: 1100px; margin: 0 auto; padding: 0 1.4rem 1rem; }
+  .trust div { background: var(--coal); border-radius: 14px; padding: 1.2rem 0.8rem; text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4); font-size: 0.85rem; border: 1px solid rgba(201,162,39,0.2); }
+  .trust .ico { font-size: 1.6rem; display: block; margin-bottom: 0.4rem; }
+  .trust b { display: block; margin-bottom: 0.2rem; color: var(--cream); }
+  .trust span { color: var(--muted); font-size: 0.78rem; }
+
+  /* ---------- SHOP ---------- */
+  .shop { max-width: 1200px; margin: 0 auto; padding: 3rem 1.4rem 3.5rem; }
+  .section-head { text-align: center; margin-bottom: 1.8rem; }
+  .section-head .kicker { color: var(--gold-l); letter-spacing: 0.22rem; text-transform: uppercase;
+    font-size: 0.75rem; font-weight: 700; margin-bottom: 0.6rem; }
+  .section-head h2 { font-size: 2.1rem; margin-bottom: 0.4rem; color: var(--cream); }
+  .section-head p { color: var(--muted); }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center;
+    align-items: center; margin-bottom: 2rem; }
+  .toolbar input { padding: 0.65rem 1.2rem; border-radius: 99px; border: 1.5px solid rgba(201,162,39,0.35);
+    background: var(--coal); color: var(--cream); font-size: 0.95rem; width: min(300px, 90vw); outline: none; }
+  .toolbar input::placeholder { color: var(--muted); }
+  .toolbar input:focus { border-color: var(--gold); }
+  .pill { padding: 0.55rem 1.15rem; border-radius: 99px; border: 1.5px solid rgba(201,162,39,0.35);
+    background: var(--coal); cursor: pointer; font-size: 0.88rem; transition: all 0.2s; color: var(--ivory); }
+  .pill:hover { border-color: var(--gold-l); }
+  .pill.active { background: linear-gradient(135deg, var(--gold-l), var(--gold-d)); border-color: var(--gold-d);
+    color: #0d0b08; font-weight: 700; }
+
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; }
+  .card { background: var(--coal); border-radius: 18px; overflow: hidden; cursor: pointer;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.5); transition: transform 0.25s, box-shadow 0.25s;
+    border: 1px solid rgba(201,162,39,0.22); position: relative;
+    opacity: 0; transform: translateY(18px); animation: fadeUp 0.5s forwards; }
+  @keyframes fadeUp { to { opacity: 1; transform: none; } }
+  .card:hover { transform: translateY(-5px); box-shadow: 0 16px 34px rgba(201,162,39,0.18); }
+  .card .imgwrap { overflow: hidden; position: relative; }
+  .card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; transition: transform 0.4s; }
+  .card:hover img { transform: scale(1.06); }
+  .badge { position: absolute; top: 0.8rem; left: 0.8rem; font-size: 0.72rem; font-weight: 700;
+    padding: 0.32rem 0.75rem; border-radius: 99px; letter-spacing: 0.03rem; z-index: 2; }
+  [dir="rtl"] .badge { left: auto; right: 0.8rem; }
+  .badge.best { background: linear-gradient(135deg, var(--gold-l), var(--gold-d)); color: #0d0b08;
+    box-shadow: 0 4px 12px rgba(201,162,39,0.4); }
+  .badge.new { background: var(--green); color: #fff; }
+  .card .info { padding: 1rem 1.1rem 1.2rem; }
+  .card .cat { font-size: 0.7rem; color: var(--gold-l); text-transform: uppercase;
+    letter-spacing: 0.08rem; font-weight: 700; }
+  .card h3 { font-size: 1.02rem; margin: 0.3rem 0 0.25rem; color: var(--cream); }
+  .card .stars { color: var(--gold-l); font-size: 0.8rem; margin-bottom: 0.4rem; }
+  .card .price { color: var(--gold-l); font-weight: 700; margin-bottom: 0.8rem; }
+  .card .price small { color: var(--muted); font-weight: 400; }
+  .add-btn { width: 100%; background: linear-gradient(135deg, var(--gold-l), var(--gold-d)); color: #0d0b08;
+    border: none; padding: 0.7rem; border-radius: 12px; font-size: 0.92rem; font-weight: 700;
+    cursor: pointer; transition: filter 0.2s; }
+  .add-btn:hover { filter: brightness(1.1); }
+  .empty { text-align: center; color: var(--muted); padding: 3rem 0; display: none; font-size: 1.05rem; }
+
+  /* ---------- PROMO BANNER ---------- */
+  .promo { max-width: 1200px; margin: 0 auto 3.5rem; padding: 0 1.4rem; }
+  .promo-box { background: linear-gradient(120deg, #0d0b08 0%, #241c0e 55%, #3a2c12 100%);
+    border: 1px solid rgba(201,162,39,0.35); border-radius: 22px;
+    padding: 2.4rem 2rem; display: flex; align-items: center; justify-content: space-between;
+    gap: 1.5rem; color: #fff; flex-wrap: wrap; box-shadow: 0 20px 45px rgba(0,0,0,0.5); }
+  .promo-box h3 { font-size: 1.5rem; margin-bottom: 0.4rem; color: var(--cream); }
+  .promo-box h3 span { color: var(--gold-l); }
+  .promo-box p { opacity: 0.8; font-size: 0.95rem; color: var(--ivory); }
+  .promo-code { display: flex; align-items: center; gap: 0.7rem; background: rgba(201,162,39,0.1);
+    border: 2px dashed var(--gold); border-radius: 14px; padding: 0.8rem 1.2rem; cursor: pointer; }
+  .promo-code b { font-size: 1.25rem; letter-spacing: 0.15rem; color: var(--gold-l); }
+  .promo-code small { opacity: 0.75; font-size: 0.75rem; display: block; color: var(--ivory); }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .reviews { background: var(--coal); padding: 3.5rem 1.4rem; border-top: 1px solid rgba(201,162,39,0.15);
+    border-bottom: 1px solid rgba(201,162,39,0.15); }
+  .reviews .inner { max-width: 1100px; margin: 0 auto; }
+  .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2rem; }
+  .rev { background: var(--coal2); border: 1px solid rgba(201,162,39,0.2); border-radius: 16px;
+    padding: 1.5rem; box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
+  .rev .stars { color: var(--gold-l); margin-bottom: 0.7rem; font-size: 0.95rem; }
+  .rev p { font-size: 0.92rem; line-height: 1.7; color: var(--ivory); margin-bottom: 1rem; font-style: italic; }
+  .rev b { font-size: 0.88rem; color: var(--cream); } .rev small { color: var(--muted); font-size: 0.78rem; display: block; }
+
+  /* ---------- NEWSLETTER ---------- */
+  .news { max-width: 680px; margin: 0 auto; padding: 3.5rem 1.4rem; text-align: center; }
+  .news h2 { font-size: 1.8rem; margin-bottom: 0.6rem; color: var(--cream); }
+  .news p { color: var(--muted); margin-bottom: 1.4rem; }
+  .news p span { color: var(--gold-l); font-weight: 700; }
+  .news-form { display: flex; gap: 0.6rem; max-width: 460px; margin: 0 auto; }
+  .news-form input { flex: 1; padding: 0.85rem 1.2rem; border-radius: 99px;
+    border: 1.5px solid rgba(201,162,39,0.35); background: var(--coal); color: var(--cream);
+    font-size: 0.95rem; outline: none; }
+  .news-form input::placeholder { color: var(--muted); }
+  .news-form input:focus { border-color: var(--gold); }
+
+  /* ---------- ABOUT / FOOTER ---------- */
+  .about { background: var(--coal); padding: 3.5rem 1.4rem; text-align: center;
+    border-top: 1px solid rgba(201,162,39,0.15); }
+  .about .inner { max-width: 680px; margin: 0 auto; }
+  .about h2 { font-size: 1.9rem; margin-bottom: 1rem; color: var(--cream); }
+  .about p { color: var(--muted); line-height: 1.9; }
+  footer { background: #080706; color: var(--ivory); padding: 3rem 1.4rem 1.6rem; font-size: 0.9rem;
+    border-top: 1px solid rgba(201,162,39,0.25); }
+  .foot-grid { max-width: 1100px; margin: 0 auto 2rem; display: grid;
+    grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .foot-grid h4 { color: var(--gold-l); margin-bottom: 0.9rem; font-size: 1rem; }
+  .foot-grid a, .foot-grid p { color: var(--muted); text-decoration: none; display: block;
+    margin-bottom: 0.55rem; line-height: 1.6; }
+  .foot-grid a:hover { color: var(--gold-l); }
+  .foot-bottom { max-width: 1100px; margin: 0 auto; padding-top: 1.4rem;
+    border-top: 1px solid rgba(201,162,39,0.2); text-align: center; color: var(--muted); font-size: 0.82rem; }
+  .foot-bottom a { color: inherit; opacity: 0.55; text-decoration: none; }
+  .foot-bottom a:hover { opacity: 1; color: var(--gold-l); }
+
+  /* ---------- DRAWER (cart) ---------- */
+  .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 90;
+    opacity: 0; pointer-events: none; transition: opacity 0.25s; }
+  .overlay.show { opacity: 1; pointer-events: auto; }
+  .drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(430px, 94vw);
+    background: var(--coal); z-index: 100; transform: translateX(105%);
+    transition: transform 0.3s ease; display: flex; flex-direction: column;
+    box-shadow: -20px 0 50px rgba(0,0,0,0.5); border-left: 1px solid rgba(201,162,39,0.25); color: var(--cream); }
+  .drawer.show { transform: translateX(0); }
+  [dir="rtl"] .drawer { right: auto; left: 0; transform: translateX(-105%);
+    box-shadow: 20px 0 50px rgba(0,0,0,0.5); border-left: none; border-right: 1px solid rgba(201,162,39,0.25); }
+  [dir="rtl"] .drawer.show { transform: translateX(0); }
+  .drawer-head { display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 1.4rem; border-bottom: 1px solid rgba(201,162,39,0.2); }
+  .drawer-head h3 { font-size: 1.25rem; color: var(--cream); }
+  .close-x { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--muted); }
+  .close-x:hover { color: var(--gold-l); }
+  .ship-bar { padding: 1rem 1.4rem 0.4rem; font-size: 0.82rem; color: var(--ivory); }
+  .ship-bar .track { height: 8px; background: #2a241b; border-radius: 99px; margin-top: 0.45rem; overflow: hidden; }
+  .ship-bar .fill { height: 100%; background: linear-gradient(90deg, var(--gold-d), var(--gold-l));
+    border-radius: 99px; transition: width 0.4s; }
+  .ship-bar b { color: var(--gold-l); }
+  .drawer-items { flex: 1; overflow-y: auto; padding: 1rem 1.4rem; }
+  .citem { display: flex; gap: 0.9rem; background: var(--coal2); border-radius: 12px;
+    padding: 0.8rem; margin-bottom: 0.8rem; align-items: center; border: 1px solid rgba(201,162,39,0.18); }
+  .citem img { width: 64px; height: 64px; border-radius: 10px; object-fit: cover; }
+  .citem .mid { flex: 1; }
+  .citem .mid b { font-size: 0.9rem; display: block; color: var(--cream); }
+  .citem .mid small { color: var(--muted); font-size: 0.78rem; }
+  .qty { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.35rem; }
+  .qty button { width: 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(201,162,39,0.4);
+    background: transparent; color: var(--gold-l); cursor: pointer; font-size: 0.9rem; line-height: 1; }
+  .citem .rm { background: none; border: none; color: var(--red); cursor: pointer; font-size: 1.05rem; }
+  .citem .line-total { font-weight: 700; font-size: 0.88rem; white-space: nowrap; color: var(--gold-l); }
+  .drawer-foot { padding: 1.1rem 1.4rem 1.3rem; border-top: 1px solid rgba(201,162,39,0.2); background: var(--coal2); }
+  .promo-line { display: flex; gap: 0.5rem; margin-bottom: 0.9rem; }
+  .promo-line input { flex: 1; padding: 0.6rem 0.9rem; border-radius: 10px;
+    border: 1.5px solid rgba(201,162,39,0.35); background: var(--coal); color: var(--cream);
+    font-size: 0.88rem; text-transform: uppercase; outline: none; }
+  .promo-line button { background: var(--gold); color: #0d0b08; border: none; border-radius: 10px;
+    padding: 0 1.1rem; cursor: pointer; font-weight: 700; }
+  .promo-ok { font-size: 0.82rem; color: var(--green); font-weight: 600; margin: -0.4rem 0 0.8rem; }
+  .drawer-foot .row { display: flex; justify-content: space-between; margin-bottom: 0.45rem; font-size: 0.93rem; color: var(--ivory); }
+  .drawer-foot .row.disc { color: var(--green); font-weight: 600; }
+  .drawer-foot .row.total { font-size: 1.15rem; font-weight: 700; margin: 0.7rem 0 1rem; color: var(--cream); }
+  .drawer-foot .row.total span:last-child { color: var(--gold-l); }
+  .drawer-foot select { width: 100%; padding: 0.65rem; border-radius: 10px;
+    border: 1.5px solid rgba(201,162,39,0.35); background: var(--coal); color: var(--cream);
+    margin-bottom: 0.8rem; font-size: 0.92rem; }
+  .drawer-foot .btn { width: 100%; }
+  .cart-empty { text-align: center; color: var(--muted); padding: 3rem 1rem; line-height: 2; }
+
+  /* ---------- MODALS ---------- */
+  .modal { position: fixed; inset: 0; z-index: 110; display: flex; align-items: center;
+    justify-content: center; padding: 1rem; opacity: 0; pointer-events: none; transition: opacity 0.25s; }
+  .modal.show { opacity: 1; pointer-events: auto; }
+  .modal-box { background: var(--coal); border: 1px solid rgba(201,162,39,0.35); border-radius: 20px;
+    max-width: 480px; width: 100%; max-height: 92vh; overflow-y: auto; position: relative;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6); color: var(--cream); }
+  .modal-box img.hero-img { width: 100%; height: 260px; object-fit: cover; border-radius: 20px 20px 0 0; }
+  .modal-body { padding: 1.5rem 1.6rem 1.8rem; }
+  .modal-body .cat { font-size: 0.72rem; color: var(--gold-l); text-transform: uppercase;
+    letter-spacing: 0.08rem; font-weight: 700; }
+  .modal-body h3 { font-size: 1.5rem; margin: 0.3rem 0 0.6rem; color: var(--cream); }
+  .modal-body p.desc { color: var(--muted); line-height: 1.8; margin-bottom: 1.2rem; font-size: 0.95rem; }
+  .wlabel { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem; display: block; color: var(--ivory); }
+  .size-tag { display: inline-block; background: rgba(201,162,39,0.12); border: 1px solid rgba(201,162,39,0.4);
+    color: var(--gold-l); border-radius: 99px; padding: 0.45rem 1.1rem; font-weight: 700; font-size: 0.9rem;
+    margin-bottom: 1.2rem; }
+  .buy-row { display: flex; gap: 0.8rem; align-items: center; }
+  .buy-row .qty { margin: 0; }
+  .buy-row .qty button { width: 34px; height: 34px; font-size: 1.1rem; }
+  .buy-row .qty span { font-size: 1.1rem; font-weight: 700; min-width: 24px; text-align: center; color: var(--cream); }
+  .buy-row .btn { flex: 1; }
+  .modal .close-x { position: absolute; top: 0.7rem; right: 0.9rem; z-index: 2;
+    background: rgba(13,11,8,0.85); border: 1px solid rgba(201,162,39,0.4); border-radius: 50%;
+    width: 34px; height: 34px; color: var(--gold-l); }
+  [dir="rtl"] .modal .close-x { right: auto; left: 0.9rem; }
+
+  .form-group { margin-bottom: 0.9rem; }
+  .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--ivory); }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.7rem 0.9rem;
+    border-radius: 10px; border: 1.5px solid rgba(201,162,39,0.35); font-size: 0.95rem;
+    background: var(--coal2); color: var(--cream); outline: none; }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: var(--muted); }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+  .recap { background: var(--coal2); border-radius: 12px; padding: 1rem 1.2rem; margin: 1rem 0;
+    font-size: 0.9rem; border: 1px solid rgba(201,162,39,0.2); color: var(--ivory); }
+  .recap .row { display: flex; justify-content: space-between; margin-bottom: 0.35rem; }
+  .recap .row.disc { color: var(--green); font-weight: 600; }
+  .recap .row.total { font-weight: 700; font-size: 1.05rem; border-top: 1px solid rgba(201,162,39,0.25);
+    padding-top: 0.6rem; margin-top: 0.6rem; color: var(--cream); }
+  .wa-btn { background: var(--wa); color: #fff; }
+  .wa-btn:hover { box-shadow: 0 10px 24px rgba(37,211,102,0.35); }
+  .cod-note { font-size: 0.8rem; color: var(--muted); margin-top: 0.8rem; text-align: center; }
+
+  .toast { position: fixed; bottom: 1.4rem; left: 50%; transform: translateX(-50%) translateY(80px);
+    background: var(--coal2); border: 1px solid rgba(201,162,39,0.5); color: var(--cream);
+    padding: 0.85rem 1.7rem; border-radius: 99px; z-index: 200; transition: transform 0.3s;
+    font-size: 0.92rem; white-space: nowrap; box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    max-width: 92vw; overflow: hidden; text-overflow: ellipsis; }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; gap: 2rem; padding: 2.6rem 1.3rem 2.5rem; text-align: center; }
+    .hero p { margin-left: auto; margin-right: auto; }
+    .hero-cta, .hero-stats { justify-content: center; }
+    .hero h1 { font-size: 2.1rem; }
+    .fc1 { left: 0.4rem; } .fc2 { right: 0.4rem; }
+    [dir="rtl"] .fc1 { left: auto; right: 0.4rem; }
+    [dir="rtl"] .fc2 { right: auto; left: 0.4rem; }
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 0.9rem; }
+    .rev-grid { grid-template-columns: 1fr; }
+    .trust { grid-template-columns: repeat(2, 1fr); }
+    .foot-grid { grid-template-columns: 1fr; gap: 1.4rem; }
+    .news-form { flex-direction: column; }
+    .news-form .btn { width: 100%; }
+  }
+  @media (max-width: 560px) {
+    nav { padding: 0.6rem 0.9rem; }
+    .logo .name { font-size: 0.9rem; }
+    nav .nav-links a { display: none; }
+    .hero h1 { font-size: 1.7rem; }
+    .card .info { padding: 0.8rem 0.8rem 1rem; }
+    .card h3 { font-size: 0.9rem; }
+    .toolbar input { flex: 1 1 100%; width: auto; }
+    .promo-box { padding: 1.8rem 1.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="announce" id="announceBar"></div>
+
+<nav>
+  <div class="logo">
+    <div class="mono">R</div>
+    <div class="name">RONA <span>SHOP</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="#home" data-i18n="nav_home"></a>
+    <a href="#shop" data-i18n="nav_shop"></a>
+    <a href="#reviews" data-i18n="nav_reviews"></a>
+    <a href="#about" data-i18n="nav_about"></a>
+    <div class="lang-sw" role="group" aria-label="Language">
+      <button data-lang="ar" onclick="setLang('ar')">عربي</button>
+      <button data-lang="fr" onclick="setLang('fr')">FR</button>
+      <button data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="cart-btn" onclick="openCart()" aria-label="Cart">🛒<span class="cart-count" id="cartCount">0</span></button>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div>
+    <div class="kicker" data-i18n="hero_kicker"></div>
+    <h1 data-i18n-html="hero_title"></h1>
+    <p data-i18n="hero_sub"></p>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="#shop" data-i18n="cta_shop"></a>
+      <a class="btn btn-outline" href="#about" data-i18n="cta_about"></a>
+    </div>
+    <div class="hero-stats">
+      <div><b id="statCount">10+</b><span data-i18n="stat1l"></span></div>
+      <div><b>4.9/5</b><span data-i18n="stat2l"></span></div>
+      <div><b>48h</b><span data-i18n="stat3l"></span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <img class="hero-art" id="heroImg" alt="Rona shop">
+    <div class="float-card fc1"><span class="stars">★★★★★</span><span>4.9/5</span></div>
+    <div class="float-card fc2">✦ <span data-i18n="fc2"></span></div>
+  </div>
+</header>
+
+<div class="trust">
+  <div><span class="ico">💎</span><b data-i18n="t1t"></b><span data-i18n="t1s"></span></div>
+  <div><span class="ico">✨</span><b data-i18n="t2t"></b><span data-i18n="t2s"></span></div>
+  <div><span class="ico">🚚</span><b data-i18n="t3t"></b><span data-i18n="t3s"></span></div>
+  <div><span class="ico">💵</span><b data-i18n="t4t"></b><span data-i18n="t4s"></span></div>
+</div>
+
+<section class="shop" id="shop">
+  <div class="section-head">
+    <div class="kicker" data-i18n="shop_kicker"></div>
+    <h2 data-i18n="shop_title"></h2>
+    <p data-i18n="shop_sub"></p>
+  </div>
+  <div class="toolbar">
+    <input type="text" id="search" data-i18n-ph="search_ph">
+    <button class="pill active" data-cat="all" data-i18n="cat_all"></button>
+    <span id="catPills" style="display:contents;"></span>
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" data-i18n="empty"></div>
+</section>
+
+<div class="promo">
+  <div class="promo-box">
+    <div>
+      <h3 data-i18n-html="promo_title"></h3>
+      <p data-i18n="promo_text"></p>
+    </div>
+    <div class="promo-code" onclick="copyCode()" title="copy">
+      <div><b id="promoCodeLbl">RONA10</b><small data-i18n="promo_copy"></small></div>
+      <span style="font-size:1.4rem;">📋</span>
+    </div>
+  </div>
+</div>
+
+<section class="reviews" id="reviews">
+  <div class="inner">
+    <div class="section-head">
+      <div class="kicker" data-i18n="rev_kicker"></div>
+      <h2 data-i18n="rev_title"></h2>
+    </div>
+    <div class="rev-grid" id="revGrid"></div>
+  </div>
+</section>
+
+<section class="news">
+  <h2 class="serif" data-i18n="news_title"></h2>
+  <p data-i18n-html="news_text"></p>
+  <form class="news-form" onsubmit="return subscribeNews(event)">
+    <input type="email" id="newsEmail" data-i18n-ph="news_ph" required>
+    <button class="btn" type="submit" data-i18n="news_btn"></button>
+  </form>
+</section>
+
+<section class="about" id="about">
+  <div class="inner">
+    <div class="section-head">
+      <div class="kicker" data-i18n="about_kicker"></div>
+      <h2 data-i18n="about_title"></h2>
+    </div>
+    <p data-i18n="about_text"></p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h4 id="footBrand">✦ RONA SHOP</h4>
+      <p data-i18n="foot_tag"></p>
+    </div>
+    <div>
+      <h4 data-i18n="foot_shop"></h4>
+      <a href="#shop" data-i18n="foot_l1"></a>
+      <a href="#reviews" data-i18n="foot_l2"></a>
+      <a href="#about" data-i18n="foot_l3"></a>
+    </div>
+    <div>
+      <h4 data-i18n="foot_info"></h4>
+      <p>🚚 <span data-i18n="foot_ship1"></span> <span id="footShip"></span></p>
+      <p data-i18n="foot_cod"></p>
+      <p data-i18n="foot_wa"></p>
+    </div>
+  </div>
+  <div class="foot-bottom"><span data-i18n="rights1"></span> <span id="footCopy">Rona shop</span> — <span data-i18n="rights2"></span> · <a href="admin.html" data-i18n="admin_link"></a></div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay" onclick="closeAll()"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h3 class="serif" data-i18n="cart_title"></h3>
+    <button class="close-x" onclick="closeAll()">✕</button>
+  </div>
+  <div class="ship-bar" id="shipBar" style="display:none;">
+    <span id="shipMsg"></span>
+    <div class="track"><div class="fill" id="shipFill" style="width:0%"></div></div>
+  </div>
+  <div class="drawer-items" id="cartItems"></div>
+  <div class="drawer-foot" id="cartFoot" style="display:none;">
+    <div class="promo-line">
+      <input id="promoInput" data-i18n-ph="promo_ph">
+      <button onclick="applyPromo()" data-i18n="promo_apply"></button>
+    </div>
+    <div class="promo-ok" id="promoOk" style="display:none;"></div>
+    <select id="citySelect" onchange="renderCart()"></select>
+    <div class="row"><span data-i18n="subtotal"></span><span id="subTotal">0</span></div>
+    <div class="row disc" id="discRow" style="display:none;"><span><span data-i18n="discount"></span> <span id="discCode"></span></span><span id="discVal"></span></div>
+    <div class="row"><span data-i18n="shipping"></span><span id="shipCost">—</span></div>
+    <div class="row total"><span data-i18n="total"></span><span id="grandTotal">0</span></div>
+    <button class="btn" onclick="openCheckout()" data-i18n="checkout"></button>
+  </div>
+</aside>
+
+<!-- PRODUCT MODAL -->
+<div class="modal" id="productModal">
+  <div class="modal-box">
+    <button class="close-x" onclick="closeAll()">✕</button>
+    <img class="hero-img" id="pmImg" alt="">
+    <div class="modal-body">
+      <div class="cat" id="pmCat"></div>
+      <h3 id="pmName"></h3>
+      <div class="stars" id="pmStars" style="color:var(--gold-l); margin-bottom:0.6rem;"></div>
+      <p class="desc" id="pmDesc"></p>
+      <span class="wlabel" data-i18n="pm_size"></span>
+      <div><span class="size-tag" id="pmSize"></span></div>
+      <div class="buy-row">
+        <div class="qty">
+          <button onclick="pmQtyChange(-1)">−</button>
+          <span id="pmQty">1</span>
+          <button onclick="pmQtyChange(1)">+</button>
+        </div>
+        <button class="btn" id="pmAdd" onclick="pmAddToCart()"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal" id="checkoutModal">
+  <div class="modal-box">
+    <button class="close-x" onclick="closeAll()">✕</button>
+    <div class="modal-body" style="padding-top:2.4rem;">
+      <h3 class="serif" style="margin-bottom:1.2rem;" data-i18n="co_title"></h3>
+      <div class="form-group"><label data-i18n="co_name"></label><input id="fName" data-i18n-ph="co_name_ph"></div>
+      <div class="form-group"><label data-i18n="co_phone"></label><input id="fPhone" placeholder="06 XX XX XX XX" inputmode="tel"></div>
+      <div class="form-group"><label data-i18n="co_city"></label><select id="fCity"></select></div>
+      <div class="form-group"><label data-i18n="co_addr"></label><textarea id="fAddr" rows="2" data-i18n-ph="co_addr_ph"></textarea></div>
+      <div class="form-group"><label data-i18n="co_note"></label><input id="fNote" data-i18n-ph="co_note_ph"></div>
+      <div class="recap" id="recap"></div>
+      <button class="btn wa-btn" style="width:100%;" onclick="submitOrder()" data-i18n="co_send"></button>
+      <p class="cod-note" data-i18n="co_cod"></p>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="img-1.js"></script>
+<script src="img-2.js"></script>
+<script src="img-3.js"></script>
+<script src="img-4.js"></script>
+<script src="img-5.js"></script>
+<script src="img-6.js"></script>
+<script src="img-7.js"></script>
+<script src="img-8.js"></script>
+<script src="img-9.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script>
+/* ============================================================
+   🌍 I18N — كل نصوص الواجهة هنا. ممنوع نص ظاهر خارج القاموس.
+   ALL UI STRINGS LIVE HERE — no hardcoded visible text outside.
+   ============================================================ */
+const I18N = {
+ar: {
+  nav_home:'الرئيسية', nav_shop:'المتجر', nav_reviews:'آراء الزبناء', nav_about:'من نحن',
+  hero_kicker:'عطور فاخرة · أصلية 100%',
+  hero_title:'عطور <em>استثنائية</em>، توصلك حتى لباب دارك',
+  hero_sub:'مسك، عود وبخور فاخر مختار بعناية — عطور أصلية بثبات قوي، والتوصيل لجميع المدن المغربية.',
+  cta_shop:'🛍️ تسوقي دابا', cta_about:'تعرفي علينا',
+  stat1l:'عطر فاخر', stat2l:'تقييم زبنائنا', stat3l:'تجهيز وإرسال', fc2:'أصلي 100%',
+  t1t:'أصلي 100%', t1s:'منتجات أصلية مضمونة',
+  t2t:'ثبات قوي', t2s:'ريحة تدوم طول النهار',
+  t3t:'توصيل سريع', t3s:'لجميع المدن المغربية',
+  t4t:'الدفع عند الاستلام', t4s:'خلصي منين توصلك الطلبية',
+  shop_kicker:'التشكيلة', shop_title:'عطورنا',
+  shop_sub:'كل طلبية كتجهز بعناية وكتغلف مزيان قبل الإرسال.',
+  search_ph:'🔍 قلبي على عطر...', cat_all:'الكل', empty:'ما لقينا حتى عطر 😕',
+  promo_title:'🎁 <span>-10%</span> على أول طلبية',
+  promo_text:'سجلي في النشرة البريدية وتوصلي بكود الترحيب.',
+  promo_copy:'انقري باش تنسخي الكود',
+  rev_kicker:'كيعجبهم', rev_title:'شنو قالو زبنائنا',
+  news_title:'توصلي بالجديد 🎁',
+  news_text:'عطور جديدة، عروض خاصة و <span>-10%</span> على أول طلبية.',
+  news_ph:'البريد الإلكتروني ديالك', news_btn:'تسجلي',
+  about_kicker:'قصتنا', about_title:'الفخامة في كل قطرة',
+  about_text:'رونا شوب متجر مغربي متخصص في العطور الشرقية الفاخرة: المسك، العود والبخور. كنختارو منتجات أصلية بعناية، بثبات قوي وأسعار مناسبة — باش كل زبونة تلقى الريحة اللي كتعبر عليها.',
+  foot_tag:'عطور شرقية فاخرة، مختارة بعناية في المغرب.',
+  foot_shop:'المتجر', foot_l1:'جميع العطور', foot_l2:'آراء الزبناء', foot_l3:'من نحن',
+  foot_info:'معلومات', foot_ship1:'🚚 التوصيل لجميع المدن المغربية —',
+  foot_cod:'💵 الدفع عند الاستلام', foot_wa:'📞 الطلب عبر واتساب',
+  rights1:'© 2026', rights2:'جميع الحقوق محفوظة · صنع بحب في المغرب', admin_link:'Admin',
+  cart_title:'🛒 سلة التسوق', cart_empty:'🧺<br><br>السلة خاوية.<br>اكتشفي عطورنا!',
+  ship_unlocked:'🎉 <b>التوصيل المجاني</b> تفعل!',
+  ship_more:'مازال <b>{n}</b> ويكون <b>التوصيل مجاني</b> 🚚',
+  promo_ph:'كود التخفيض', promo_apply:'تطبيق',
+  promo_ok:'✅ كود {c} تطبق: -{p}%', promo_bad:'⚠️ كود غير صالح',
+  city_ph:'— مدينة التوصيل —',
+  subtotal:'المجموع الفرعي', discount:'التخفيض', shipping:'التوصيل', free:'مجاني 🎉', total:'المجموع', checkout:'أكدي الطلبية ←',
+  pm_size:'الحجم:', pm_reviews:'تقييمات الزبناء', pm_add:'زيدي للسلة',
+  toast_added:'✅ {p} تزاد للسلة',
+  co_title:'تأكيد الطلبية',
+  co_name:'الاسم الكامل *', co_name_ph:'الاسم ديالك',
+  co_phone:'الهاتف *', co_city:'المدينة *', co_addr:'العنوان الكامل *',
+  co_addr_ph:'الزنقة، الحي، علامة مميزة...', co_note:'ملاحظة (اختياري)', co_note_ph:'تفاصيل على الطلبية...',
+  co_send:'📲 صيفطي الطلبية عبر واتساب', co_cod:'الدفع عند الاستلام — كتخلصي منين توصلك الطلبية.',
+  toast_fill:'⚠️ عمري الاسم، الهاتف والعنوان', toast_sent:'🎉 الطلبية تصيفطات! شكراً!',
+  toast_news:'🎁 شكراً! الكود ديالك: {c} (-{p}%)', toast_copied:'📋 الكود {c} تنسخ!',
+  currency:'درهم', badge_best:'الأكثر مبيعاً', badge_new:'جديد',
+  wa_title:'طلبية جديدة', wa_subtotal:'المجموع الفرعي', wa_disc:'التخفيض', wa_ship:'التوصيل',
+  wa_total:'المجموع', wa_free:'مجاني', wa_cod:'الدفع عند الاستلام',
+  revs: [
+    { t:'"المسك الأبيض ريحتو راقية بزاف والثبات ديالو ممتاز. التوصيل كان سريع والتغليف زوين."', n:'سلمى ب.', c:'الرباط · شراء مؤكد' },
+    { t:'"شريت مجموعة المسك هدية، العلبة فخمة والريحة كتعجب كلشي. نصحكم بيه."', n:'ياسمين ا.', c:'الدار البيضاء · شراء مؤكد' },
+    { t:'"شغف عود أحمر ولا أروع — ريحة فخمة كتبقى. التعامل راقي والدفع عند الاستلام."', n:'مهدي ت.', c:'مراكش · شراء مؤكد' }
+  ]
+},
+fr: {
+  nav_home:'Accueil', nav_shop:'Boutique', nav_reviews:'Avis', nav_about:'À propos',
+  hero_kicker:'Parfums de luxe · 100% authentiques',
+  hero_title:'Des parfums <em>d\'exception</em>, livrés jusqu\'à votre porte',
+  hero_sub:'Musc, oud et encens de luxe sélectionnés avec soin — des parfums authentiques à la tenue remarquable, livrés partout au Maroc.',
+  cta_shop:'🛍️ Commander', cta_about:'Notre histoire',
+  stat1l:'parfums de luxe', stat2l:'note de nos clients', stat3l:'préparation & envoi', fc2:'100% authentique',
+  t1t:'100% authentique', t1s:'Produits originaux garantis',
+  t2t:'Longue tenue', t2s:'Un sillage qui dure toute la journée',
+  t3t:'Livraison rapide', t3s:'Partout au Maroc',
+  t4t:'Paiement à la livraison', t4s:'Payez à la réception',
+  shop_kicker:'La collection', shop_title:'Nos parfums',
+  shop_sub:'Chaque commande est préparée avec soin et soigneusement emballée.',
+  search_ph:'🔍 Rechercher un parfum...', cat_all:'Tout', empty:'Aucun parfum trouvé 😕',
+  promo_title:'🎁 <span>-10%</span> sur votre première commande',
+  promo_text:'Inscrivez-vous à notre newsletter et recevez votre code de bienvenue.',
+  promo_copy:'Cliquez pour copier le code',
+  rev_kicker:'Ils nous adorent', rev_title:'Ce que disent nos clients',
+  news_title:'Recevez nos nouveautés 🎁',
+  news_text:'Nouveaux parfums, offres privées et <span>-10%</span> sur votre première commande.',
+  news_ph:'Votre adresse e-mail', news_btn:'Je m\'inscris',
+  about_kicker:'Notre histoire', about_title:'Le luxe dans chaque goutte',
+  about_text:'Rona shop est une boutique marocaine spécialisée dans la parfumerie orientale de luxe : musc, oud et encens. Nous sélectionnons des produits authentiques avec soin, à la tenue remarquable et à des prix justes — pour que chacune trouve le parfum qui lui ressemble.',
+  foot_tag:'Parfumerie orientale de luxe, sélectionnée avec soin au Maroc.',
+  foot_shop:'Boutique', foot_l1:'Tous les parfums', foot_l2:'Avis clients', foot_l3:'Notre histoire',
+  foot_info:'Informations', foot_ship1:'🚚 Livraison partout au Maroc —',
+  foot_cod:'💵 Paiement à la livraison', foot_wa:'📞 Commandes via WhatsApp',
+  rights1:'© 2026', rights2:'Tous droits réservés · Fait avec ♥ au Maroc', admin_link:'Admin',
+  cart_title:'🛒 Mon panier', cart_empty:'🧺<br><br>Votre panier est vide.<br>Découvrez nos parfums !',
+  ship_unlocked:'🎉 <b>Livraison GRATUITE</b> débloquée !',
+  ship_more:'Plus que <b>{n}</b> pour la <b>livraison gratuite</b> 🚚',
+  promo_ph:'Code promo', promo_apply:'OK',
+  promo_ok:'✅ Code {c} appliqué : -{p}%', promo_bad:'⚠️ Code promo invalide',
+  city_ph:'— Ville de livraison —',
+  subtotal:'Sous-total', discount:'Réduction', shipping:'Livraison', free:'Gratuite 🎉', total:'Total', checkout:'Commander →',
+  pm_size:'Contenance :', pm_reviews:'Avis clients', pm_add:'Ajouter au panier',
+  toast_added:'✅ {p} ajouté au panier',
+  co_title:'Finaliser la commande',
+  co_name:'Nom complet *', co_name_ph:'Votre nom',
+  co_phone:'Téléphone *', co_city:'Ville *', co_addr:'Adresse complète *',
+  co_addr_ph:'Rue, quartier, repère...', co_note:'Note (optionnel)', co_note_ph:'Précisions sur la commande...',
+  co_send:'📲 Envoyer la commande sur WhatsApp', co_cod:'Paiement à la livraison — vous payez à la réception.',
+  toast_fill:'⚠️ Remplissez nom, téléphone et adresse', toast_sent:'🎉 Commande envoyée ! Merci !',
+  toast_news:'🎁 Merci ! Votre code : {c} (-{p}%)', toast_copied:'📋 Code {c} copié !',
+  currency:'DH', badge_best:'Bestseller', badge_new:'Nouveau',
+  wa_title:'Nouvelle commande', wa_subtotal:'Sous-total', wa_disc:'Réduction', wa_ship:'Livraison',
+  wa_total:'Total', wa_free:'Gratuite', wa_cod:'Paiement à la livraison',
+  revs: [
+    { t:'"Le musc blanc est d\'une élégance rare, avec une tenue excellente. Livraison rapide et emballage soigné."', n:'Salma B.', c:'Rabat · Achat vérifié' },
+    { t:'"J\'ai offert le coffret de muscs : le coffret est luxueux et tout le monde adore le parfum. Je recommande."', n:'Yasmine E.', c:'Casablanca · Achat vérifié' },
+    { t:'"Shaghaf Oud Ahmar est somptueux — un sillage qui reste. Service sérieux et paiement à la livraison."', n:'Mehdi T.', c:'Marrakech · Achat vérifié' }
+  ]
+},
+en: {
+  nav_home:'Home', nav_shop:'Shop', nav_reviews:'Reviews', nav_about:'About',
+  hero_kicker:'Luxury perfumes · 100% authentic',
+  hero_title:'<em>Exceptional</em> perfumes, delivered to your door',
+  hero_sub:'Musk, oud and luxury incense carefully selected — authentic perfumes with remarkable longevity, delivered all across Morocco.',
+  cta_shop:'🛍️ Shop now', cta_about:'Our story',
+  stat1l:'luxury perfumes', stat2l:'customer rating', stat3l:'prep & dispatch', fc2:'100% authentic',
+  t1t:'100% authentic', t1s:'Guaranteed original products',
+  t2t:'Long-lasting', t2s:'A scent that stays all day',
+  t3t:'Fast delivery', t3s:'All across Morocco',
+  t4t:'Cash on delivery', t4s:'Pay when you receive',
+  shop_kicker:'The collection', shop_title:'Our perfumes',
+  shop_sub:'Every order is carefully prepared and beautifully packed.',
+  search_ph:'🔍 Search a perfume...', cat_all:'All', empty:'No perfume found 😕',
+  promo_title:'🎁 <span>-10%</span> on your first order',
+  promo_text:'Join our newsletter and receive your welcome code.',
+  promo_copy:'Click to copy the code',
+  rev_kicker:'Loved by many', rev_title:'What our customers say',
+  news_title:'Get our news 🎁',
+  news_text:'New perfumes, private offers and <span>-10%</span> on your first order.',
+  news_ph:'Your email address', news_btn:'Subscribe',
+  about_kicker:'Our story', about_title:'Luxury in every drop',
+  about_text:'Rona shop is a Moroccan boutique specialised in luxury oriental perfumery: musk, oud and incense. We carefully select authentic products with remarkable longevity at fair prices — so everyone can find the scent that speaks to them.',
+  foot_tag:'Luxury oriental perfumery, carefully selected in Morocco.',
+  foot_shop:'Shop', foot_l1:'All perfumes', foot_l2:'Customer reviews', foot_l3:'Our story',
+  foot_info:'Information', foot_ship1:'🚚 Delivery all across Morocco —',
+  foot_cod:'💵 Cash on delivery', foot_wa:'📞 Orders via WhatsApp',
+  rights1:'© 2026', rights2:'All rights reserved · Made with ♥ in Morocco', admin_link:'Admin',
+  cart_title:'🛒 My cart', cart_empty:'🧺<br><br>Your cart is empty.<br>Discover our perfumes!',
+  ship_unlocked:'🎉 <b>FREE delivery</b> unlocked!',
+  ship_more:'Only <b>{n}</b> more for <b>FREE delivery</b> 🚚',
+  promo_ph:'Promo code', promo_apply:'Apply',
+  promo_ok:'✅ Code {c} applied: -{p}%', promo_bad:'⚠️ Invalid promo code',
+  city_ph:'— Delivery city —',
+  subtotal:'Subtotal', discount:'Discount', shipping:'Delivery', free:'Free 🎉', total:'Total', checkout:'Checkout →',
+  pm_size:'Size:', pm_reviews:'Customer reviews', pm_add:'Add to cart',
+  toast_added:'✅ {p} added to cart',
+  co_title:'Complete your order',
+  co_name:'Full name *', co_name_ph:'Your name',
+  co_phone:'Phone *', co_city:'City *', co_addr:'Full address *',
+  co_addr_ph:'Street, district, landmark...', co_note:'Note (optional)', co_note_ph:'Order details...',
+  co_send:'📲 Send order via WhatsApp', co_cod:'Cash on delivery — you pay when you receive your order.',
+  toast_fill:'⚠️ Please fill name, phone and address', toast_sent:'🎉 Order sent! Thank you!',
+  toast_news:'🎁 Thank you! Your code: {c} (-{p}%)', toast_copied:'📋 Code {c} copied!',
+  currency:'DH', badge_best:'Bestseller', badge_new:'New',
+  wa_title:'New order', wa_subtotal:'Subtotal', wa_disc:'Discount', wa_ship:'Delivery',
+  wa_total:'Total', wa_free:'Free', wa_cod:'Cash on delivery',
+  revs: [
+    { t:'"The white musk is remarkably elegant with excellent longevity. Fast delivery and beautiful packaging."', n:'Salma B.', c:'Rabat · Verified purchase' },
+    { t:'"I gifted the musk set — the box is luxurious and everyone loves the scent. Highly recommended."', n:'Yasmine E.', c:'Casablanca · Verified purchase' },
+    { t:'"Shaghaf Oud Ahmar is stunning — a lasting trail. Serious service and cash on delivery."', n:'Mehdi T.', c:'Marrakech · Verified purchase' }
+  ]
+}
+};
+const CATS = {
+  musk:   { ar:'مسك',      fr:'Muscs',    en:'Musks' },
+  oud:    { ar:'عود',      fr:'Oud',      en:'Oud' },
+  sets:   { ar:'مجموعات',  fr:'Coffrets', en:'Gift sets' },
+  bakhoor:{ ar:'بخور',     fr:'Bakhoor',  en:'Bakhoor' }
+};
+
+/* ============================================================
+   ⚠️ CATALOGUE DRAFT — قيم تجريبية غير مؤكدة ⚠️
+   DRAFT / NON VÉRIFIÉ : prix, descriptions et tailles à confirmer
+   avec la vraie boutique avant tout lancement commercial.
+   ============================================================ */
+const DEFAULT_SETTINGS = {
+  storeName: "Rona shop",
+  whatsapp: '212689338429', // ⚠️ رقم واتساب الصفحة — للتأكيد قبل الإطلاق
+  announce: {
+    ar: "🚚 التوصيل <b>مجاني</b> للطلبات فوق 500 درهم · 💵 الدفع عند الاستلام",
+    fr: "🚚 Livraison <b>GRATUITE</b> dès 500 DH d'achat · 💵 Paiement à la livraison",
+    en: "🚚 <b>FREE</b> delivery on orders over 500 DH · 💵 Cash on delivery"
+  },
+  freeShip: 500,
+  promo: 'RONA10',
+  pct: 10,
+  fees: { 'Casablanca': 25, 'Rabat': 35, 'Marrakech': 45, 'Agadir': 50,
+          'Tanger': 50, 'Fès': 40, 'Meknès': 40, 'Oujda': 55, 'Autre ville': 60 }
+};
+/* Prix en DH — ⚠️ DRAFT : à confirmer avec la boutique */
+const DEFAULT_PRODUCTS = [
+  { id:'musc-blanc-ibraq', cat:'musk', img:'musc-blanc-ibraq', badge:{ar:'الأكثر مبيعاً',fr:'Bestseller',en:'Bestseller'}, rating:'★★★★★', price:149, size:'75ml',
+    name:{ ar:'مسك أبيض إبراق', fr:'Musc blanc Ibraq', en:'Ibraq White Musk' },
+    desc:{ ar:'مسك أبيض نقي بريحة هادئة وراقية، ثبات قوي وإحساس بالنظافة طول النهار.',
+           fr:"Musc blanc pur, frais et délicat, avec une tenue remarquable toute la journée.",
+           en:"Pure white musk — clean, soft and elegant, with outstanding all-day longevity." } },
+  { id:'coffret-muscs-4x6', cat:'sets', img:'coffret-muscs-4x6', badge:{ar:'جديد',fr:'Nouveau',en:'New'}, rating:'★★★★★', price:99, size:'4 × 6ml',
+    name:{ ar:'مجموعة زيوت المسك 4×6 مل', fr:'Coffret huiles de musc 4×6 ml', en:'Musk oils set 4×6 ml' },
+    desc:{ ar:'أربع نفحات من أجود أنواع المسك في علبة واحدة أنيقة — مثالية للهدايا.',
+           fr:"Quatre huiles de musc d'exception réunies dans un coffret élégant — idéal en cadeau.",
+           en:"Four exquisite musk oils in one elegant box — a perfect gift." } },
+  { id:'shaghaf-oud-ahmar', cat:'oud', img:'', badge:{ar:'الأكثر مبيعاً',fr:'Bestseller',en:'Bestseller'}, rating:'★★★★★', price:349, size:'75ml',
+    name:{ ar:'شغف عود أحمر', fr:'Shaghaf Oud Ahmar', en:'Shaghaf Oud Ahmar' },
+    desc:{ ar:'عطر شرقي فاخر يجمع بين العود والعنبر والفانيليا — حضور لا يُنسى.',
+           fr:"Parfum oriental luxueux mêlant oud, ambre et vanille — une présence inoubliable.",
+           en:"Luxurious oriental fragrance blending oud, amber and vanilla — unforgettable presence." } },
+  { id:'blue-box', cat:'sets', img:'blue-box', badge:{ar:'',fr:'',en:''}, rating:'★★★★☆', price:499, size:'3 × 75ml',
+    name:{ ar:'بلو بوكس — 3 عطور', fr:'Blue Box — 3 parfums', en:'Blue Box — 3 perfumes' },
+    desc:{ ar:'ثلاثة عطور راقية: بالاس روز، سفاير ليذر، بلو دايموند — فخامة متكاملة.',
+           fr:"Trois parfums raffinés : Palace Rose, Sapphire Leather, Blue Diamond — le luxe complet.",
+           en:"Three refined fragrances: Palace Rose, Sapphire Leather, Blue Diamond — complete luxury." } },
+  { id:'mega-mini-diamond', cat:'sets', img:'mega-mini-diamond', badge:{ar:'',fr:'',en:''}, rating:'★★★★☆', price:249, size:'20ml',
+    name:{ ar:'ميقا ميني دايموند', fr:'Mega Mini Diamond', en:'Mega Mini Diamond' },
+    desc:{ ar:'مجموعة ميني دايموند — تشكيلة روائح ماسية في حجم عملي للسفر.',
+           fr:"Coffret Mini Diamond — une sélection de senteurs diamant en format voyage.",
+           en:"Mini Diamond set — a selection of diamond scents in a handy travel size." } },
+  { id:'maamoul-koweitien', cat:'bakhoor', img:'maamoul-koweitien', badge:{ar:'جديد',fr:'Nouveau',en:'New'}, rating:'★★★★★', price:129, size:'—',
+    name:{ ar:'المعمول الكويتي', fr:'Maamoul koweïtien', en:'Kuwaiti Maamoul' },
+    desc:{ ar:'بخور المعمول الكويتي بريحة عود فاخرة — مثالي للضيافة والمناسبات.',
+           fr:"Encens Maamoul koweïtien au oud précieux — pour vos réceptions et occasions.",
+           en:"Kuwaiti Maamoul bakhoor with precious oud — for hospitality and special occasions." } },
+  { id:'musc-ghazal', cat:'musk', img:'musc-ghazal', badge:{ar:'',fr:'',en:''}, rating:'★★★★☆', price:119, size:'—',
+    name:{ ar:'مسك الغزال', fr:'Musc Al Ghazal', en:'Musk Al Ghazal' },
+    desc:{ ar:'مسك الغزال الأصيل — ريحة دافئة وناعمة تدوم طويلاً.',
+           fr:"Musc Al Ghazal authentique — une senteur chaude et douce qui dure.",
+           en:"Authentic Musk Al Ghazal — a warm, soft scent that lasts." } },
+  { id:'irth-collection', cat:'sets', img:'irth-collection', badge:{ar:'الأكثر مبيعاً',fr:'Bestseller',en:'Bestseller'}, rating:'★★★★★', price:299, size:'3 pcs',
+    name:{ ar:'مجموعة إرث IBR AQ', fr:'Collection Irth IBR AQ', en:'Irth Collection IBR AQ' },
+    desc:{ ar:'مجموعة إرث — 3 ريحات راقية في باكيج واحد: فخامة وثبات.',
+           fr:"Collection Irth — 3 senteurs raffinées en un coffret : luxe et tenue.",
+           en:"Irth Collection — 3 refined scents in one package: luxury and longevity." } },
+  { id:'diamond-collection', cat:'oud', img:'diamond-collection', badge:{ar:'',fr:'',en:''}, rating:'★★★★☆', price:399, size:'75ml',
+    name:{ ar:'دايموند كوليكشن', fr:'Diamond Collection', en:'Diamond Collection' },
+    desc:{ ar:'عطور الدايموند كوليكشن — توليفة روائح راقية بتفاصيل ساحرة.',
+           fr:"Parfums Diamond Collection — une composition de senteurs raffinées aux détails captivants.",
+           en:"Diamond Collection perfumes — a composition of refined scents with captivating details." } },
+  { id:'musc-shams', cat:'musk', img:'musc-shams', badge:{ar:'جديد',fr:'Nouveau',en:'New'}, rating:'★★★★★', price:139, size:'—',
+    name:{ ar:'مسك الشمس', fr:'Musc Al Shams', en:'Musk Al Shams' },
+    desc:{ ar:'مسك الشمس — ريحة دافئة بحال دفء الشمس، ناعمة وراقية.',
+           fr:"Musc Al Shams — une senteur chaude comme le soleil, douce et raffinée.",
+           en:"Musk Al Shams — a scent warm as sunshine, soft and refined." } },
+];
+let PRODUCTS = DEFAULT_PRODUCTS;
+
+/* ---------- LANGUAGE ---------- */
+let LANG = 'ar';
+try { LANG = localStorage.getItem('rona_lang') || 'ar'; } catch(e) { LANG = 'ar'; }
+if (!I18N[LANG]) LANG = 'ar';
+const t = k => (I18N[LANG] && I18N[LANG][k] !== undefined) ? I18N[LANG][k] : (I18N.ar[k] !== undefined ? I18N.ar[k] : k);
+const L = o => { if (!o) return ''; if (typeof o === 'string') return o; return o[LANG] || o.ar || o.fr || o.en || ''; };
+const fill = (s, m) => String(s).replace(/\{(\w+)\}/g, (_, k) => (m[k] !== undefined ? m[k] : ''));
+
+function setLang(l) {
+  if (!I18N[l]) return;
+  LANG = l;
+  try { localStorage.setItem('rona_lang', l); } catch(e) {}
+  document.documentElement.lang = l;
+  document.documentElement.dir = (l === 'ar') ? 'rtl' : 'ltr';
+  applyI18n();
+  renderCatPills(); render(); renderCart(); applySettingsToDom();
+}
+function applyI18n() {
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
+  document.querySelectorAll('.lang-sw button').forEach(b => b.classList.toggle('active', b.dataset.lang === LANG));
+  $('revGrid').innerHTML = t('revs').map(r => `
+    <div class="rev"><div class="stars">★★★★★</div><p>${r.t}</p><b>${r.n}</b><small>${r.c}</small></div>`).join('');
+}
+
+/* ---------- PLACEHOLDER ART (gold monogram on black) ---------- */
+function phImg(label) {
+  const ch = ((label || 'R').trim().charAt(0) || 'R').toUpperCase();
+  const svg = "<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'>" +
+    "<defs><radialGradient id='g' cx='50%' cy='38%' r='65%'>" +
+    "<stop offset='0%' stop-color='#3a2f16'/><stop offset='60%' stop-color='#171208'/><stop offset='100%' stop-color='#0d0b08'/>" +
+    "</radialGradient><linearGradient id='gl' x1='0' y1='0' x2='1' y2='1'>" +
+    "<stop offset='0%' stop-color='#e8c766'/><stop offset='100%' stop-color='#9a7b1c'/></linearGradient></defs>" +
+    "<rect width='600' height='600' fill='url(#g)'/>" +
+    "<rect x='26' y='26' width='548' height='548' fill='none' stroke='url(#gl)' stroke-width='3'/>" +
+    "<rect x='40' y='40' width='520' height='520' fill='none' stroke='url(#gl)' stroke-width='1' opacity='0.6'/>" +
+    "<text x='300' y='330' text-anchor='middle' font-family='Georgia,serif' font-size='220' fill='url(#gl)'>" + ch + "</text>" +
+    "<text x='300' y='470' text-anchor='middle' font-family='Georgia,serif' font-size='34' letter-spacing='12' fill='#c9a227'>RONA SHOP</text>" +
+    "<text x='300' y='120' text-anchor='middle' font-size='30' fill='#c9a227'>✦</text></svg>";
+  return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+}
+function imgFor(p) {
+  const n = (p.img || '').trim();
+  if (/^https?:\/\//i.test(n) || n.indexOf('data:') === 0) return n;
+  const hit = (window.IMGS || {})[n];
+  if (hit) return hit;
+  return phImg(L(p.name));
+}
+
+/* ---------- STATE ---------- */
+let cart = [];
+try { cart = JSON.parse(localStorage.getItem('rona_cart') || '[]'); } catch(e) { cart = []; }
+let activeCat = 'all', pmProduct = null, pmQty = 1, promoRate = 0, promoCode = '';
+let WHATSAPP_NUMBER = DEFAULT_SETTINGS.whatsapp;
+let FREE_SHIPPING_FROM = DEFAULT_SETTINGS.freeShip;
+let PROMOS = { [DEFAULT_SETTINGS.promo.toUpperCase()]: DEFAULT_SETTINGS.pct / 100 };
+let SHIPPING = Object.assign({}, DEFAULT_SETTINGS.fees);
+let STORE_NAME = DEFAULT_SETTINGS.storeName;
+let ANNOUNCE = DEFAULT_SETTINGS.announce;
+
+const save = () => { try { localStorage.setItem('rona_cart', JSON.stringify(cart)); } catch(e) {} };
+const fmt = n => Math.round(n) + ' ' + t('currency');
+const $ = id => document.getElementById(id);
+const BADGE_HTML = b => b ? `<span class="badge ${/best|bestseller|الأكثر/i.test(b) ? 'best' : 'new'}">${b}</span>` : '';
+
+/* ---------- SHOP GRID ---------- */
+function renderCatPills() {
+  $('catPills').innerHTML = Object.keys(CATS).map(k =>
+    `<button class="pill${activeCat===k?' active':''}" data-cat="${k}">${L(CATS[k])}</button>`).join('');
+  document.querySelectorAll('.pill[data-cat]').forEach(b =>
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.pill[data-cat]').forEach(x => x.classList.remove('active'));
+      b.classList.add('active'); activeCat = b.dataset.cat; render();
+    }));
+}
+function render() {
+  const q = $('search').value.toLowerCase().trim();
+  const list = PRODUCTS.filter(p => {
+    const nm = (L(p.name) + ' ' + (p.name.ar||'') + ' ' + (p.name.fr||'') + ' ' + (p.name.en||'')).toLowerCase();
+    return (activeCat === 'all' || p.cat === activeCat) && (!q || nm.includes(q));
+  });
+  $('grid').innerHTML = list.map((p, i) => `
+    <div class="card" style="animation-delay:${Math.min(i*0.05, 0.4)}s" onclick="openProduct('${p.id}')">
+      <div class="imgwrap">
+        <img src="${imgFor(p)}" alt="${escAttr(L(p.name))}" loading="lazy">
+        ${BADGE_HTML(L(p.badge))}
+      </div>
+      <div class="info">
+        <div class="cat">${L(CATS[p.cat]) || p.cat}</div>
+        <h3>${escHtml(L(p.name))}</h3>
+        <div class="stars">${p.rating || '★★★★★'}</div>
+        <div class="price">${fmt(p.price)} <small>/ ${escHtml(p.size || '')}</small></div>
+        <button class="add-btn" onclick="event.stopPropagation(); quickAdd('${p.id}')">+ ${t('pm_add')}</button>
+      </div>
+    </div>`).join('');
+  $('empty').style.display = list.length ? 'none' : 'block';
+}
+function escHtml(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function escAttr(s){ return escHtml(s).replace(/"/g,'&quot;'); }
+$('search').addEventListener('input', render);
+
+/* ---------- PRODUCT MODAL ---------- */
+function openProduct(id) {
+  pmProduct = PRODUCTS.find(p => p.id === id);
+  if (!pmProduct) return;
+  pmQty = 1;
+  $('pmImg').src = imgFor(pmProduct);
+  $('pmCat').textContent = L(CATS[pmProduct.cat]) || pmProduct.cat;
+  $('pmName').textContent = L(pmProduct.name);
+  $('pmStars').textContent = (pmProduct.rating || '★★★★★') + ' · ' + t('pm_reviews');
+  $('pmDesc').textContent = L(pmProduct.desc);
+  $('pmSize').textContent = pmProduct.size || '';
+  $('pmQty').textContent = pmQty;
+  pmUpdatePrice();
+  $('overlay').classList.add('show');
+  $('productModal').classList.add('show');
+}
+function pmQtyChange(d) { pmQty = Math.max(1, Math.min(20, pmQty + d)); $('pmQty').textContent = pmQty; pmUpdatePrice(); }
+function pmUpdatePrice() { $('pmAdd').textContent = t('pm_add') + ' · ' + fmt(pmProduct.price * pmQty); }
+function pmAddToCart() { addToCart(pmProduct.id, pmQty); closeAll(); }
+function quickAdd(id) { addToCart(id, 1); }
+
+/* ---------- CART ---------- */
+function addToCart(id, qty) {
+  const found = cart.find(i => i.id === id);
+  if (found) found.qty = Math.min(20, found.qty + qty);
+  else cart.push({ id, qty });
+  save(); updateBadge();
+  const p = PRODUCTS.find(p => p.id === id);
+  toast(fill(t('toast_added'), { p: L(p.name) }));
+}
+function updateBadge() { $('cartCount').textContent = cart.reduce((s, i) => s + i.qty, 0); }
+function subTotal() {
+  return cart.reduce((s, i) => { const p = PRODUCTS.find(p => p.id === i.id); return s + (p ? p.price * i.qty : 0); }, 0);
+}
+function discount() { return subTotal() * promoRate; }
+function shipFor(city) {
+  if (!city) return null;
+  if (subTotal() - discount() >= FREE_SHIPPING_FROM) return 0;
+  return SHIPPING[city] !== undefined ? SHIPPING[city] : SHIPPING['Autre ville'];
+}
+function openCart() { renderCart(); $('overlay').classList.add('show'); $('drawer').classList.add('show'); }
+function renderCart() {
+  const box = $('cartItems');
+  if (!cart.length) {
+    box.innerHTML = '<div class="cart-empty">' + t('cart_empty') + '</div>';
+    $('cartFoot').style.display = 'none'; $('shipBar').style.display = 'none';
+    return;
+  }
+  $('cartFoot').style.display = 'block';
+  box.innerHTML = cart.map((i, idx) => {
+    const p = PRODUCTS.find(p => p.id === i.id);
+    if (!p) return '';
+    return `<div class="citem">
+      <img src="${imgFor(p)}" alt="">
+      <div class="mid">
+        <b>${escHtml(L(p.name))}</b><small>${escHtml(p.size || '')} · ${fmt(p.price)}</small>
+        <div class="qty">
+          <button onclick="chQty(${idx},-1)">−</button><span>${i.qty}</span><button onclick="chQty(${idx},1)">+</button>
+        </div>
+      </div>
+      <div class="line-total">${fmt(p.price * i.qty)}</div>
+      <button class="rm" onclick="rmItem(${idx})">🗑</button>
+    </div>`;
+  }).join('');
+
+  const net = subTotal() - discount();
+  const bar = $('shipBar');
+  bar.style.display = 'block';
+  if (net >= FREE_SHIPPING_FROM) {
+    $('shipMsg').innerHTML = t('ship_unlocked');
+    $('shipFill').style.width = '100%';
+  } else {
+    $('shipMsg').innerHTML = fill(t('ship_more'), { n: fmt(FREE_SHIPPING_FROM - net) });
+    $('shipFill').style.width = Math.min(100, net / FREE_SHIPPING_FROM * 100) + '%';
+  }
+
+  const hasDisc = discount() > 0;
+  $('discRow').style.display = hasDisc ? 'flex' : 'none';
+  if (hasDisc) { $('discCode').textContent = '(' + promoCode + ')'; $('discVal').textContent = '−' + fmt(discount()); }
+
+  const city = $('citySelect').value, ship = shipFor(city);
+  $('subTotal').textContent = fmt(subTotal());
+  $('shipCost').textContent = ship === null ? '—' : (ship === 0 ? t('free') : fmt(ship));
+  $('grandTotal').textContent = fmt(net + (ship || 0));
+}
+function chQty(idx, d) {
+  cart[idx].qty += d;
+  if (cart[idx].qty < 1) cart.splice(idx, 1);
+  else cart[idx].qty = Math.min(20, cart[idx].qty);
+  save(); updateBadge(); renderCart();
+}
+function rmItem(idx) { cart.splice(idx, 1); save(); updateBadge(); renderCart(); }
+function applyPromo() {
+  const code = $('promoInput').value.trim().toUpperCase();
+  if (PROMOS[code]) {
+    promoRate = PROMOS[code]; promoCode = code;
+    $('promoOk').style.display = 'block';
+    $('promoOk').textContent = fill(t('promo_ok'), { c: code, p: Math.round(promoRate * 100) });
+    toast(fill(t('promo_ok'), { c: code, p: Math.round(promoRate * 100) }));
+  } else {
+    promoRate = 0; promoCode = '';
+    $('promoOk').style.display = 'none';
+    toast(t('promo_bad'));
+  }
+  renderCart();
+}
+
+/* ---------- CHECKOUT ---------- */
+function openCheckout() {
+  if (!cart.length) return;
+  closeAll();
+  const fCity = $('fCity');
+  fCity.innerHTML = Object.keys(SHIPPING).map(c => `<option>${escHtml(c)}</option>`).join('');
+  if ($('citySelect').value) fCity.value = $('citySelect').value;
+  fCity.onchange = updateRecap;
+  updateRecap();
+  $('overlay').classList.add('show');
+  $('checkoutModal').classList.add('show');
+}
+function updateRecap() {
+  const city = $('fCity').value, net = subTotal() - discount(), ship = shipFor(city);
+  const lines = cart.map(i => {
+    const p = PRODUCTS.find(p => p.id === i.id);
+    return p ? `<div class="row"><span>${escHtml(L(p.name))} × ${i.qty}</span><span>${fmt(p.price * i.qty)}</span></div>` : '';
+  }).join('');
+  $('recap').innerHTML = lines +
+    (discount() > 0 ? `<div class="row disc"><span>${t('discount')} (${escHtml(promoCode)})</span><span>−${fmt(discount())}</span></div>` : '') +
+    `<div class="row"><span>${t('shipping')} (${escHtml(city)})</span><span>${ship === 0 ? t('free') : fmt(ship)}</span></div>` +
+    `<div class="row total"><span>${t('total')}</span><span>${fmt(net + ship)}</span></div>`;
+}
+function submitOrder() {
+  const name = $('fName').value.trim(), phone = $('fPhone').value.trim(),
+        city = $('fCity').value, addr = $('fAddr').value.trim(), note = $('fNote').value.trim();
+  if (!name || !phone || !addr) { toast(t('toast_fill')); return; }
+  const net = subTotal() - discount(), ship = shipFor(city), total = net + ship;
+  const lines = cart.map(i => {
+    const p = PRODUCTS.find(p => p.id === i.id);
+    return p ? `• ${L(p.name)} × ${i.qty} = ${p.price * i.qty} ${t('currency')}` : '';
+  });
+  const msg =
+`✦ *${t('wa_title')} — ${STORE_NAME}*
+━━━━━━━━━━━━
+${lines.join('\n')}
+━━━━━━━━━━━━
+${t('wa_subtotal')}: ${fmt(subTotal())}` +
+(discount() > 0 ? `\n${t('wa_disc')} (${promoCode}): −${fmt(discount())}` : '') +
+`
+${t('wa_ship')} (${city}): ${ship === 0 ? t('wa_free') : fmt(ship)}
+*${t('wa_total')}: ${fmt(total)}*
+━━━━━━━━━━━━
+👤 ${name}
+📞 ${phone}
+📍 ${addr}, ${city}` + (note ? `\n📝 ${note}` : '') +
+`\n━━━━━━━━━━━━
+💵 ${t('wa_cod')}`;
+  window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
+  cart = []; promoRate = 0; promoCode = ''; $('promoInput').value = ''; $('promoOk').style.display = 'none';
+  save(); updateBadge(); closeAll();
+  toast(t('toast_sent'));
+}
+
+/* ---------- MISC ---------- */
+function activePromoCode(){ return Object.keys(PROMOS)[0] || ''; }
+function activePromoPct(){ return Math.round((PROMOS[activePromoCode()] || 0) * 100); }
+function copyCode() {
+  const c = activePromoCode();
+  const done = () => toast(fill(t('toast_copied'), { c }));
+  if (navigator.clipboard) navigator.clipboard.writeText(c).then(done).catch(done);
+  else done();
+}
+function subscribeNews(e) {
+  e.preventDefault();
+  if (!$('newsEmail').value.trim()) return false;
+  $('newsEmail').value = '';
+  toast(fill(t('toast_news'), { c: activePromoCode(), p: activePromoPct() }));
+  return false;
+}
+function closeAll() {
+  $('overlay').classList.remove('show');
+  $('drawer').classList.remove('show');
+  $('productModal').classList.remove('show');
+  $('checkoutModal').classList.remove('show');
+}
+let toastT;
+function toast(msg) {
+  const el = $('toast');
+  el.textContent = msg; el.classList.add('show');
+  clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove('show'), 2600);
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+
+/* ---------- FIREBASE ---------- */
+function applyShopData(data) {
+  const s = data.settings || {};
+  if (s.storeName) STORE_NAME = String(s.storeName);
+  if (s.whatsapp) WHATSAPP_NUMBER = String(s.whatsapp).replace(/\D/g, '') || WHATSAPP_NUMBER;
+  if (s.announce && typeof s.announce === 'object') ANNOUNCE = s.announce;
+  else if (typeof s.announce === 'string' && s.announce) ANNOUNCE = { ar: s.announce, fr: s.announce, en: s.announce };
+  if (s.freeShip) FREE_SHIPPING_FROM = Number(s.freeShip) || FREE_SHIPPING_FROM;
+  if (s.promo) PROMOS = { [String(s.promo).toUpperCase()]: (Number(s.pct) || 0) / 100 };
+  if (s.fees && typeof s.fees === 'object') SHIPPING = s.fees;
+  if (Array.isArray(data.products) && data.products.length) PRODUCTS = data.products;
+}
+function applySettingsToDom() {
+  $('announceBar').innerHTML = L(ANNOUNCE);
+  $('promoCodeLbl').textContent = activePromoCode();
+  const pct = activePromoPct();
+  $('promoInput').placeholder = t('promo_ph') + ' (' + activePromoCode() + ')';
+  $('footShip').textContent = t('free') + ' ' + t('shipping') + ' ' + fmt(FREE_SHIPPING_FROM) + '+';
+  $('footCopy').textContent = STORE_NAME;
+  $('statCount').textContent = PRODUCTS.length + '+';
+  $('citySelect').innerHTML = `<option value="">${t('city_ph')}</option>` +
+    Object.keys(SHIPPING).map(c => `<option>${escHtml(c)}</option>`).join('');
+  const heroP = PRODUCTS[0];
+  $('heroImg').src = heroP ? imgFor(heroP) : phImg('R');
+  $('heroImg').alt = heroP ? L(heroP.name) : 'Rona shop';
+}
+
+/* ---------- INIT ---------- */
+async function init() {
+  document.documentElement.lang = LANG;
+  document.documentElement.dir = (LANG === 'ar') ? 'rtl' : 'ltr';
+  try {
+    const cfg = window.FIREBASE_CONFIG;
+    if (window.FIREBASE_ENABLED && cfg && cfg.apiKey && cfg.apiKey !== 'PASTE_HERE' && window.firebase) {
+      firebase.initializeApp(cfg);
+      const snap = await firebase.database().ref('/shop').get();
+      if (snap.exists()) applyShopData(snap.val());
+    }
+  } catch(e) { /* demo mode: keep defaults */ }
+  cart = cart.filter(i => PRODUCTS.some(p => p.id === i.id));
+  save();
+  applyI18n();
+  renderCatPills();
+  applySettingsToDom();
+  updateBadge();
+  render();
+}
+init();
+</script>
+</body>
+</html>
